@@ -150,7 +150,9 @@ a:hover {
 }
 @media screen and (max-width:500px) {
   .title {
-    font-size: clamp(1.5rem,8vw,2rem)
+    font-size: clamp(1.5rem,8vw,2rem);
+    line-height: 1.2em;
+    letter-spacing: -.02em
   }
 }
 .caption {
@@ -230,7 +232,8 @@ a:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 8px
+    gap: 8px;
+    margin-top: .35em
   }
 }
 .main-header-nav-email--small-screen {
