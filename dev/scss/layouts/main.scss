@@ -1,15 +1,16 @@
-.main-grid{
+.main-grid {
     display: grid;
     grid-gap: 8px;
     margin: 0 8px;
 }
+
 .main-grid {
     grid-template-areas:
-    'header'
-    'promo'
-    'info'
-    'projects'
-    'footer'
+        'header'
+        'promo'
+        'info'
+        'projects'
+        'footer'
     ;
 }
 
@@ -19,16 +20,55 @@
 
 .promo {
     grid-area: promo;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 422px;
+    padding-top: 1.15em;
+    border-bottom: 2px solid var(--background-card);
 }
 
 .info {
     grid-area: info;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 'skills skills skills offset-1 works works works offset-2 studies studies studies offset-3';
+    padding: 2.85em 0 4.55em;
+}
+
+.skills, .works, .studies {
+    padding-right: 1.6em;
+   // grid-column: span 3;
+}
+.skills {
+    grid-area: skills;
+}
+.works {
+    grid-area: works;
+}
+.studies {
+    grid-area: studies;
+}
+.skills-set{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skills-item {
+    padding: 28px 20px;
+    background-color: var(--background-card);
+    border-radius: 42px;
 }
 
 .projects {
     grid-area: projects;
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-card);
+    height: 680px;
 }
 
 .main-footer {

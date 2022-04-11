@@ -1,4 +1,14 @@
 .main-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: .75rem 0 1.5em;
+}
+.main-header-logo {
+    font-size: 2rem;
+    line-height: 1em;
+}
+.main-header-nav {
+    display: flex;
+    gap: 30px;
+    margin-top: .25em;
 }
