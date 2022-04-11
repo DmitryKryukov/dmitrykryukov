@@ -62,7 +62,7 @@ function cleanimg() {
 }
 
 function views() {
-    return src(['dev/pug/*.pug', '!dev/pug/**/*.pug'])
+    return src('dev/pug/*.pug')
     .pipe(
       pug({
 		pretty: true

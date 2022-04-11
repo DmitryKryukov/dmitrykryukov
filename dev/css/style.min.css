@@ -184,7 +184,9 @@ a:hover {
   display: -ms-grid;
   display: grid;
   grid-gap: 8px;
-  margin: 0 8px
+  padding: 0 8px;
+  margin: auto;
+  max-width: 1920px
 }
 .main-grid {
   grid-template-areas: "header" "promo" "info" "projects" "footer"
@@ -222,13 +224,11 @@ a:hover {
   padding-right: 1.6em
 }
 .skills {
-  padding-right: .6em
-}
-.skills {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: skills
+  grid-area: skills;
+  padding-right: .6em
 }
 .works {
   -ms-grid-row: 1;
@@ -248,7 +248,8 @@ a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 8px
+  gap: 8px;
+  margin-top: -4px
 }
 .skills-item {
   padding: 28px 20px;
