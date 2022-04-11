@@ -1,0 +1,36 @@
+.main-grid,
+.grid {
+    display: grid;
+    grid-gap: 8px;
+}
+.main-grid {
+    grid-template-areas:
+    'header'
+    'promo'
+    'info'
+    'projects'
+    'footer'
+    ;
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.promo {
+    grid-area: promo;
+}
+
+.info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.main-footer {
+    grid-area: footer;
+}
