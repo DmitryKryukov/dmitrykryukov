@@ -43,7 +43,7 @@ function styles() {
 async function images() {
 	imagecomp(
 		"dev/images/src/**/*",
-		"dev/images/dest/",
+		"dev/images/opt/",
 		{ compress_force: false, statistic: true, autoupdate: true }, false,
 		{ jpg: { engine: "mozjpeg", command: ["-quality", "80"] } },
 		{ png: { engine: "pngquant", command: ["--quality=80-100", "-o"] } },
@@ -58,7 +58,7 @@ async function images() {
 }
 
 function cleanimg() {
-	return del('dev/images/dest/**/*', { force: true })
+	return del('dev/images/opt/**/*', { force: true })
 }
 
 function views() {
@@ -80,7 +80,7 @@ function build() {
 	return src([
 		'dev/css/**/*.min.css',
 		'dev/scripts/**/*.min.js',
-		'dev/images/dest/**/*',
+		'dev/images/opt/**/*',
 		'dev/**/*.html',
 		], { base: 'dev' })
 	.pipe(dest('dist'))
