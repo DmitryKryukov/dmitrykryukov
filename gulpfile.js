@@ -83,7 +83,8 @@ function build() {
 		'dev/css/**/*.min.css',
 		'dev/scripts/**/*.min.js',
 		'dev/images/opt/**/*',
-		'dev/*.html',
+		'dev/fonts/*',
+		'dev/*.html'
 		], { base: 'dev' })
 	.pipe(dest('dist'))
 }
