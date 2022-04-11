@@ -19,12 +19,32 @@ a:hover {
   line-height: 1em;
   letter-spacing: -0.03em;
 }
+@media screen and (max-width: 1800px) {
+  .title {
+    font-size: clamp(4em, 6vw, 6em);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: clamp(2em, 10vw, 4em);
+  }
+}
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+}
 .caption {
   color: var(--foreground-muted);
   margin-bottom: 0.8em;
   line-height: 1.2em;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+@media screen and (max-width: 420px) {
+  .caption {
+    font-size: 0.8em;
+  }
 }
 .date-groups {
   display: flex;

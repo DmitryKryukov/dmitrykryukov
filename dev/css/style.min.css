@@ -138,12 +138,32 @@ a:hover {
   line-height: 1em;
   letter-spacing: -.03em
 }
+@media screen and (max-width:1800px) {
+  .title {
+    font-size: clamp(4em,6vw,6em)
+  }
+}
+@media screen and (max-width:1024px) {
+  .title {
+    font-size: clamp(2em,10vw,4em)
+  }
+}
+@media screen and (max-width:500px) {
+  .title {
+    font-size: clamp(1.5rem,8vw,2rem)
+  }
+}
 .caption {
   color: var(--foreground-muted);
   margin-bottom: .8em;
   line-height: 1.2em;
   letter-spacing: .05em;
   text-transform: uppercase
+}
+@media screen and (max-width:420px) {
+  .caption {
+    font-size: .8em
+  }
 }
 .date-groups {
   display: -webkit-box;
@@ -170,9 +190,25 @@ a:hover {
   grid-template-columns: repeat(2,1fr);
   padding: .75rem 0 1.5em
 }
+@media screen and (max-width:500px) {
+  .main-header {
+    padding-bottom: 1em
+  }
+}
 .main-header-logo {
   font-size: 2rem;
   line-height: 1em
+}
+@media screen and (max-width:800px) {
+  .main-header-logo {
+    margin-right: 30px;
+    white-space: nowrap
+  }
+}
+@media screen and (max-width:500px) {
+  .main-header-logo {
+    font-size: clamp(1.5rem,8vw,2rem)
+  }
 }
 .main-header-nav {
   display: -webkit-box;
@@ -181,13 +217,46 @@ a:hover {
   gap: 30px;
   margin-top: .25em
 }
+@media screen and (max-width:800px) {
+  .main-header-nav {
+    -ms-grid-column-align: end;
+    justify-self: end;
+    gap: 16px
+  }
+}
+@media screen and (max-width:500px) {
+  .main-header-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 8px
+  }
+}
+.main-header-nav-email--small-screen {
+  display: none
+}
+@media screen and (max-width:800px) {
+  .main-header-nav-email--big-screen {
+    display: none
+  }
+  .main-header-nav-email--small-screen {
+    display: initial
+  }
+}
 .main-grid {
   display: -ms-grid;
   display: grid;
   grid-gap: 8px;
   padding: 0 8px;
   margin: auto;
+  width: 100%;
   max-width: 1920px
+}
+@media screen and (max-width:800px) {
+  .main-grid {
+    padding: 0 16px
+  }
 }
 .main-grid {
   grid-template-areas: "header" "promo" "info" "projects" "footer"
@@ -207,6 +276,12 @@ a:hover {
   padding: 1.15em 0 1.5em;
   border-bottom: 2px solid var(--background-card)
 }
+@media screen and (max-width:500px) {
+  .promo {
+    min-height: clamp(320px,70vh,727px);
+    padding-top: 0
+  }
+}
 .info {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
@@ -218,6 +293,26 @@ a:hover {
   grid-template-areas: "skills skills skills offset-1 works works works offset-2 studies studies studies offset-3";
   padding: 2.85em 0 4.55em
 }
+@media screen and (max-width:1850px) {
+  .info {
+    grid-template-areas: "skills skills skills skills works works works works studies studies studies studies"
+  }
+}
+@media screen and (max-width:1500px) {
+  .info {
+    grid-template-areas: "skills skills skills skills skills skills skills skills skills skills skills skills" "works works works works works offset-1 studies studies studies studies studies offset-2"
+  }
+}
+@media screen and (max-width:1024px) {
+  .info {
+    grid-template-areas: "skills skills skills skills skills skills skills skills skills skills skills skills" "works works works works works works studies studies studies studies studies studies"
+  }
+}
+@media screen and (max-width:700px) {
+  .info {
+    grid-template-areas: "skills skills skills skills skills skills skills skills skills skills skills skills" "works works works works works works works works works works works works" "studies studies studies studies studies studies studies studies studies studies studies studies"
+  }
+}
 .studies,
 .works {
   padding-right: 1.6em
@@ -227,7 +322,17 @@ a:hover {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: skills;
-  padding-right: .6em
+  padding-right: 0
+}
+@media screen and (max-width:1500px) {
+  .skills {
+    margin-bottom: 2em
+  }
+}
+@media screen and (max-width:700px) {
+  .skills {
+    margin-bottom: 4.55em
+  }
 }
 .works {
   -ms-grid-row: 1;
@@ -235,11 +340,90 @@ a:hover {
   -ms-grid-column-span: 3;
   grid-area: works
 }
+@media screen and (max-width:700px) {
+  .works {
+    margin-bottom: 4.55em
+  }
+}
+@media screen and (max-width:420px) {
+  .studies,
+  .works {
+    padding-right: 0
+  }
+}
 .studies {
   -ms-grid-row: 1;
   -ms-grid-column: 9;
   -ms-grid-column-span: 3;
   grid-area: studies
+}
+@media screen and (max-width:1850px) {
+  .skills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4
+  }
+  .works {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4
+  }
+  .studies {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 4
+  }
+}
+@media screen and (max-width:1500px) {
+  .skills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12
+  }
+  .works {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5
+  }
+  .studies {
+    -ms-grid-row: 2;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 5
+  }
+}
+@media screen and (max-width:1024px) {
+  .skills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12
+  }
+  .works {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6
+  }
+  .studies {
+    -ms-grid-row: 2;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6
+  }
+}
+@media screen and (max-width:700px) {
+  .skills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12
+  }
+  .works {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12
+  }
+  .studies {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12
+  }
 }
 .skills-set {
   display: -webkit-box;
@@ -255,6 +439,19 @@ a:hover {
   background-color: var(--background-card);
   border-radius: 42px
 }
+@media screen and (max-width:500px) {
+  .skills-item:nth-child(6) {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2
+  }
+}
+@media screen and (max-width:420px) {
+  .skills-item {
+    padding: 12px;
+    font-size: .8em
+  }
+}
 .projects {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
@@ -266,32 +463,40 @@ a:hover {
   background-color: var(--background-card);
   overflow: hidden
 }
-.project:hover .project-idle {
-  opacity: 0;
-  -webkit-transition: opacity .3s var(--ease-out-quint);
-  -o-transition: opacity .3s var(--ease-out-quint);
-  transition: opacity .3s var(--ease-out-quint);
-  pointer-events: none
+@media screen and (pointer:fine) {
+  .project:hover .project-idle {
+    opacity: 0;
+    -webkit-transition: opacity .3s var(--ease-out-quint);
+    -o-transition: opacity .3s var(--ease-out-quint);
+    transition: opacity .3s var(--ease-out-quint);
+    pointer-events: none
+  }
+  .project:hover .project-idle-typo {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
+    transition: -webkit-transform .8s var(--ease-out-quint);
+    -o-transition: transform .8s var(--ease-out-quint);
+    transition: transform .8s var(--ease-out-quint);
+    transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
+  }
+  .project:hover .project-hover-sun-wrapper {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
+    transition: -webkit-transform .8s var(--ease-out-quint);
+    -o-transition: transform .8s var(--ease-out-quint);
+    transition: transform .8s var(--ease-out-quint);
+    transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
+  }
 }
-.project:hover .project-idle-typo {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
-  transition: -webkit-transform .8s var(--ease-out-quint);
-  -o-transition: transform .8s var(--ease-out-quint);
-  transition: transform .8s var(--ease-out-quint);
-  transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
-}
-.project:hover .project-hover-sun-wrapper {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
-  transition: -webkit-transform .8s var(--ease-out-quint);
-  -o-transition: transform .8s var(--ease-out-quint);
-  transition: transform .8s var(--ease-out-quint);
-  transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
+@media screen and (max-width:500px) {
+  .project {
+    height: 320px;
+    pointer-events: none
+  }
 }
 .project-hover,
 .project-idle {

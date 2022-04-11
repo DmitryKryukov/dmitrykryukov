@@ -3,7 +3,13 @@
   grid-gap: 8px;
   padding: 0 8px;
   margin: auto;
+  width: 100%;
   max-width: 1920px;
+}
+@media screen and (max-width: 800px) {
+  .main-grid {
+    padding: 0 16px;
+  }
 }
 
 .main-grid {
@@ -26,7 +32,12 @@
   padding: 1.15em 0 1.5em;
   border-bottom: 2px solid var(--background-card);
 }
-
+@media screen and (max-width: 500px) {
+  .promo {
+    min-height: clamp(320px, 70vh, 727px);
+    padding-top: 0;
+  }
+}
 .info {
   grid-area: info;
   display: grid;
@@ -34,7 +45,33 @@
   grid-template-areas: 'skills skills skills offset-1 works works works offset-2 studies studies studies offset-3';
   padding: 2.85em 0 4.55em;
 }
-
+@media screen and (max-width: 1850px) {
+  .info {
+    grid-template-areas: 'skills skills skills skills works works works works studies studies studies studies';
+  }
+}
+@media screen and (max-width: 1500px) {
+  .info {
+    grid-template-areas:
+      'skills skills skills skills skills skills skills skills skills skills skills skills'
+      'works works works works works offset-1 studies studies studies studies studies offset-2';
+  }
+}
+@media screen and (max-width: 1024px) {
+  .info {
+    grid-template-areas:
+      'skills skills skills skills skills skills skills skills skills skills skills skills'
+      'works works works works works works studies studies studies studies studies studies';
+  }
+}
+@media screen and (max-width: 700px) {
+  .info {
+    grid-template-areas:
+      'skills skills skills skills skills skills skills skills skills skills skills skills'
+      'works works works works works works works works works works works works'
+      'studies studies studies studies studies studies studies studies studies studies studies studies';
+  }
+}
 .works,
 .studies {
   padding-right: 1.6em;
@@ -42,10 +79,31 @@
 
 .skills {
   grid-area: skills;
-  padding-right: 0.6em;
+  padding-right: 0;
+}
+@media screen and (max-width: 1500px) {
+  .skills {
+    margin-bottom: 2em;
+  }
+}
+@media screen and (max-width: 700px) {
+  .skills {
+    margin-bottom: 4.55em;
+  }
 }
 .works {
   grid-area: works;
+}
+@media screen and (max-width: 700px) {
+  .works {
+    margin-bottom: 4.55em;
+  }
+}
+@media screen and (max-width: 420px) {
+  .works,
+  .studies {
+    padding-right: 0;
+  }
 }
 .studies {
   grid-area: studies;
@@ -62,6 +120,19 @@
   background-color: var(--background-card);
   border-radius: 42px;
 }
+@media screen and (max-width: 500px) {
+  .skills-item {
+    &:nth-child(6) {
+      order: 2;
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .skills-item {
+    padding: 12px;
+    font-size: 0.8em;
+  }
+}
 
 .projects {
   grid-area: projects;
@@ -72,20 +143,28 @@
   height: 680px;
   background-color: var(--background-card);
   overflow: hidden;
-  &:hover {
-    .project-idle {
-      opacity: 0;
-      transition: opacity 0.3s var(--ease-out-quint);
-      pointer-events: none;
+  @media screen and (pointer: fine) {
+    &:hover {
+      .project-idle {
+        opacity: 0;
+        transition: opacity 0.3s var(--ease-out-quint);
+        pointer-events: none;
+      }
+      .project-idle-typo {
+        transform: scale(1.2);
+        transition: transform 0.8s var(--ease-out-quint);
+      }
+      .project-hover-sun-wrapper {
+        transform: scale(1);
+        transition: transform 0.8s var(--ease-out-quint);
+      }
     }
-    .project-idle-typo {
-      transform: scale(1.2);
-      transition: transform 0.8s var(--ease-out-quint);
-    }
-    .project-hover-sun-wrapper {
-      transform: scale(1);
-      transition: transform 0.8s var(--ease-out-quint);
-    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .project {
+    height: 320px;
+    pointer-events: none;
   }
 }
 .project-idle,
