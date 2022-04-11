@@ -3,7 +3,7 @@ extend layout/layout.pug
 block content
 	.main-grid
 		include includes/header.pug
-		
+
 		.promo
 			h2.title Проектирую транспортные схемы, сайты и приложения, системы навигации в общественных местах.
 
@@ -53,8 +53,19 @@ block content
 
 		.projects
 			h3.caption Проекты
-			.project 
-				img(src="images/opt/projects-placeholder.svg" alt="Скоро покажу работы")
+			.project
+				.project-idle
+					img(src="images/opt/projects-placeholder.svg" alt="Скоро покажу работы").project-idle-typo
+				.project-hover
+					.project-hover-left
+						.project-hover-left-outline
+						.project-hover-left-mask
+					.project-hover-sun-wrapper
+						img.project-hover-sun(src="images/opt/projects-sun.svg" alt="Солнце")
+					.project-hover-right
+						.project-hover-right-outline
+						.project-hover-right-mask
+
 
 		include includes/footer.pug
 

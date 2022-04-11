@@ -134,8 +134,9 @@ a:hover {
   color: var(--accent-primary)
 }
 .title {
-  font-size: 3.2em;
-  line-height: 1.0625em
+  font-size: 6em;
+  line-height: 1em;
+  letter-spacing: -.03em
 }
 .caption {
   color: var(--foreground-muted);
@@ -202,10 +203,8 @@ a:hover {
   grid-area: promo;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2,1fr);
-  min-height: 422px;
-  padding-top: 1.15em;
+  min-height: 727px;
+  padding: 1.15em 0 1.5em;
   border-bottom: 2px solid var(--background-card)
 }
 .info {
@@ -262,6 +261,39 @@ a:hover {
   grid-area: projects
 }
 .project {
+  position: relative;
+  height: 680px;
+  background-color: var(--background-card)
+}
+.project:hover .project-idle {
+  opacity: 0;
+  -webkit-transition: opacity .3s var(--ease-out-quint);
+  -o-transition: opacity .3s var(--ease-out-quint);
+  transition: opacity .3s var(--ease-out-quint);
+  pointer-events: none
+}
+.project:hover .project-idle-typo {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
+  transition: -webkit-transform .8s var(--ease-out-quint);
+  -o-transition: transform .8s var(--ease-out-quint);
+  transition: transform .8s var(--ease-out-quint);
+  transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
+}
+.project:hover .project-hover-sun-wrapper {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .8s var(--ease-out-quint);
+  transition: -webkit-transform .8s var(--ease-out-quint);
+  -o-transition: transform .8s var(--ease-out-quint);
+  transition: transform .8s var(--ease-out-quint);
+  transition: transform .8s var(--ease-out-quint),-webkit-transform .8s var(--ease-out-quint)
+}
+.project-hover,
+.project-idle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,8 +303,128 @@ a:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: var(--background-card);
-  height: 680px
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-card)
+}
+.project-idle {
+  -webkit-transition: opacity .5s var(--ease-out-quint);
+  -o-transition: opacity .5s var(--ease-out-quint);
+  transition: opacity .5s var(--ease-out-quint);
+  z-index: 10
+}
+.project-idle-typo {
+  -webkit-transition: -webkit-transform .5s var(--ease-out-quint);
+  transition: -webkit-transform .5s var(--ease-out-quint);
+  -o-transition: transform .5s var(--ease-out-quint);
+  transition: transform .5s var(--ease-out-quint);
+  transition: transform .5s var(--ease-out-quint),-webkit-transform .5s var(--ease-out-quint)
+}
+.project-hover-sun-wrapper {
+  -webkit-transform: scale(.8);
+  -ms-transform: scale(.8);
+  transform: scale(.8);
+  -webkit-transition: -webkit-transform .5s var(--ease-out-quint);
+  transition: -webkit-transform .5s var(--ease-out-quint);
+  -o-transition: transform .5s var(--ease-out-quint);
+  transition: transform .5s var(--ease-out-quint);
+  transition: transform .5s var(--ease-out-quint),-webkit-transform .5s var(--ease-out-quint)
+}
+.project-hover-sun {
+  width: 438px;
+  height: 438px;
+  -webkit-animation: sun-rotate 6s linear infinite;
+  animation: sun-rotate 6s linear infinite
+}
+@-webkit-keyframes sun-rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@keyframes sun-rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+.project-hover-left {
+  --x-position: 20%;
+  --y-position: calc(50% - 128px);
+  left: var(--x-position);
+  top: var(--y-position)
+}
+.project-hover-left,
+.project-hover-right {
+  position: absolute;
+  z-index: 5
+}
+.project-hover-left,
+.project-hover-left-mask,
+.project-hover-left-outline {
+  width: 486px;
+  height: 256px
+}
+.project-hover-left-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  -webkit-mask-image: url(../images/opt/projects-left.svg);
+  mask-image: url(../images/opt/projects-left.svg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px)
+}
+.project-hover-left-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/opt/projects-left-outline.svg);
+  -webkit-mask-image: linear-gradient(90deg,rgba(0,0,0,0) 20px,#000 80px);
+  mask-image: linear-gradient(90deg,rgba(0,0,0,0) 20px,#000 80px);
+  z-index: 1
+}
+.project-hover-right {
+  --x-position: 20%;
+  --y-position: calc(50% - 150px);
+  right: var(--x-position);
+  top: var(--y-position)
+}
+.project-hover-right,
+.project-hover-right-mask,
+.project-hover-right-outline {
+  width: 468px;
+  height: 300px
+}
+.project-hover-right-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  -webkit-mask-image: url(../images/opt/projects-right.svg);
+  mask-image: url(../images/opt/projects-right.svg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px)
+}
+.project-hover-right-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/opt/projects-right-outline.svg);
+  -webkit-mask-image: linear-gradient(-90deg,rgba(0,0,0,0) 20px,#000 80px);
+  mask-image: linear-gradient(-90deg,rgba(0,0,0,0) 20px,#000 80px);
+  z-index: 1
 }
 .main-footer {
   -ms-grid-row: 9;
