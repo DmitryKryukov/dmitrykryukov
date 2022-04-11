@@ -1,48 +1,54 @@
 extend layout/layout.pug
 
 block content
-	div
-		h2 Проектирую транспортные схемы, сайты и приложения, системы навигации в общественных местах.
-	div
-		.skills
-			h3 Навыки
-			ul.skills-set
-				li.skills-item Веб-дизайн
-				li.skills-item UX-дизайн
-				li.skills-item UI-дизайн
-				li.skills-item Дизайн-продуктов
-				li.skills-item Арт-дирекшн
-				li.skills-item Управление проектами
-				li.skills-item Брендинг
-		.experiences
-			h3 Опыт работы
-			.date-group
-				h4 2021 – настоящее время
-				p Арт-директор — рекламное агентство «Картон»
-			.date-group
-				h4 2018 – 2021
-				p Старший дизайнер — рекламное агентство «Вебмеханик»
-			.date-group
-				h4 2016 – 2018
-				p Дизайнер — веб-студия «Машадизайн»
-			.date-group
-				h4 2014
-				p Дизайнер — стриминговый сервис «Goodgame.ru»
-		.studies
-			h3 Образование
-			.date-group
-				h4 В процессе
-				p Школа дизайнеров — Бюро Горбунова
-			.date-group
-				h4 2021
-				p Школа менеджеров — Яндекс
-			.date-group
-				h4 2020
-				p UX-дизайн — Bangbang Education
-			.date-group
-				h4 2012 – 2017
-				p Прикладная информатика — Астраханский государственный технический университет
-	div
+	.main-grid
+		include includes/header.pug
+		.promo
+			h2 Проектирую транспортные схемы, сайты и приложения, системы навигации в общественных местах.
+		.info
+			.skills
+				h3 Навыки
+				ul.skills-set
+					li.skills-item Веб-дизайн
+					li.skills-item UX-дизайн
+					li.skills-item UI-дизайн
+					li.skills-item Дизайн-продуктов
+					li.skills-item Арт-дирекшн
+					li.skills-item Управление проектами
+					li.skills-item Брендинг
+
+			.works
+				h3 Опыт работы
+				.date-group
+					h4 2021 – настоящее время
+					p Арт-директор — рекламное агентство «Картон»
+				.date-group
+					h4 2018 – 2021
+					p Старший дизайнер — рекламное агентство «Вебмеханик»
+				.date-group
+					h4 2016 – 2018
+					p Дизайнер — веб-студия «Машадизайн»
+				.date-group
+					h4 2014
+					p Дизайнер — стриминговый сервис «Goodgame.ru»
+
+			.studies
+				h3 Образование
+				.date-group
+					h4 В процессе
+					p Школа дизайнеров — Бюро Горбунова
+				.date-group
+					h4 2021
+					p Школа менеджеров — Яндекс
+				.date-group
+					h4 2020
+					p UX-дизайн — Bangbang Education
+				.date-group
+					h4 2012 – 2017
+					p Прикладная информатика — Астраханский государственный технический университет
+
 		.projects
 			h3 Проекты
 			.project Скоро покажу работы
+
+		include includes/footer.pug
