@@ -62,7 +62,7 @@ function cleanimg() {
 }
 
 function views() {
-    return src('dev/pug/**/*.pug')
+    return src('dev/pug/*.pug')
     .pipe(
       pug()
     )
@@ -81,7 +81,7 @@ function build() {
 		'dev/css/**/*.min.css',
 		'dev/scripts/**/*.min.js',
 		'dev/images/opt/**/*',
-		'dev/**/*.html',
+		'dev/*.html',
 		], { base: 'dev' })
 	.pipe(dest('dist'))
 }
@@ -95,6 +95,7 @@ exports.scripts = scripts;
 exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
+exports.cleandist = cleandist;
 
 exports.build = series(cleandist, views, styles, scripts, images, build);
 exports.default = parallel(views, styles, scripts, browsersync, startwatch);
