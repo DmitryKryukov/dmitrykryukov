@@ -71,6 +71,7 @@
   position: relative;
   height: 680px;
   background-color: var(--background-card);
+  overflow: hidden;
   &:hover {
     .project-idle {
       opacity: 0;
@@ -105,15 +106,17 @@
 }
 .project-idle-typo {
   transition: transform 0.5s var(--ease-out-quint);
+  width: clamp(10px, 80vw, 1080px);
 }
 .project-hover-sun-wrapper {
   transform: scale(0.8);
   transition: transform 0.5s var(--ease-out-quint);
+  pointer-events: none;
 }
 .project-hover-sun {
-  width: 438px;
-  height: 438px;
-  animation: sun-rotate 6s linear infinite;
+  width: clamp(10px, 80vw, 438px);
+  height: clamp(10px, 80vw, 438px);
+  animation: sun-rotate 3s linear infinite;
   @keyframes sun-rotate {
     from {
       transform: rotate(0deg);
@@ -134,6 +137,7 @@
 .project-hover-right {
   position: absolute;
   z-index: 5;
+  pointer-events: none;
 }
 .project-hover-left,
 .project-hover-left-mask,
