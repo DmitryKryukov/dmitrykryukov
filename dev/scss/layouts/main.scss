@@ -1,7 +1,7 @@
-.main-grid,
-.grid {
+.main-grid{
     display: grid;
     grid-gap: 8px;
+    margin: 0 8px;
 }
 .main-grid {
     grid-template-areas:

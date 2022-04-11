@@ -1,0 +1,11 @@
+body {
+    background-color: var(--background-body);
+    color: var(--foreground-body);
+}
+.caption {
+    color: var(--foreground-muted);
+}
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}

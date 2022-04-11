@@ -1,3 +1,7 @@
-@import 'library/reset';
-@import 'layout/main';
+@import 'libraries/reset';
+@import 'variables';
+@import 'basic';
+@import 'layouts/header';
+@import 'layouts/main';
+@import 'layouts/footer';
 //@import 'debug';
