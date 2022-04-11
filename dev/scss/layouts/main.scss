@@ -35,8 +35,11 @@
     padding: 2.85em 0 4.55em;
 }
 
-.skills, .works, .studies {
+.works, .studies {
     padding-right: 1.6em;
+}
+.skills {
+    padding-right: .6em;
 }
 .skills {
     grid-area: skills;

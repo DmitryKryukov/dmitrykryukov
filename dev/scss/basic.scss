@@ -1,7 +1,9 @@
 body {
+    font-size: 1.25rem;
+    font-family: 'TwentyTwelve';
+    font-feature-settings: 'ss01' on;
     background-color: var(--background-body);
     color: var(--foreground-body);
-    font-size: 1.25rem;
 }
 a, a:visited {
     color: inherit;
@@ -19,6 +21,7 @@ a:hover {
     color: var(--foreground-muted);
     margin-bottom: .8em;
     line-height: 1.2em;
+    letter-spacing: .05em;
     text-transform: uppercase;    
 }
 .date-groups {
