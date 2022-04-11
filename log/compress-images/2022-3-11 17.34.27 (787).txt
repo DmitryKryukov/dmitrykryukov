@@ -1,7 +1,0 @@
-File from: [dev/images/src/**/*]
-
-File to: [-]
-
-Compression algorithm: [-]
-
-Description:  Directory is empty!: 
