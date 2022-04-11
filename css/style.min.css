@@ -101,11 +101,37 @@ input {
   -webkit-appearance: none;
   border-radius: 0
 }
-.grid,
+:root {
+  --background-body: #000;
+  --background-card: #141414;
+  --foreground-body: #f2f2f2;
+  --foreground-muted: #616161;
+  --accent-primary: #DECEAB;
+  --accent-secoundary: #FFE5F2
+}
+body {
+  background-color: var(--background-body);
+  color: var(--foreground-body)
+}
+.caption {
+  color: var(--foreground-muted)
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none
+}
+.main-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2,1fr)
+}
 .main-grid {
   display: -ms-grid;
   display: grid;
-  grid-gap: 8px
+  grid-gap: 8px;
+  margin: 0 8px
 }
 .main-grid {
   grid-template-areas: "header" "promo" "info" "projects" "footer"
@@ -138,4 +164,10 @@ input {
   -ms-grid-row: 9;
   -ms-grid-column: 1;
   grid-area: footer
+}
+.main-footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2,1fr)
 }
