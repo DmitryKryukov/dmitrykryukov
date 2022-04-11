@@ -101,3 +101,41 @@ input {
   -webkit-appearance: none;
   border-radius: 0
 }
+.grid,
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 8px
+}
+.main-grid {
+  grid-template-areas: "header" "promo" "info" "projects" "footer"
+}
+.main-header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header
+}
+.promo {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: promo
+}
+.info {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: info;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3,1fr)
+}
+.projects {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: projects
+}
+.main-footer {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  grid-area: footer
+}
