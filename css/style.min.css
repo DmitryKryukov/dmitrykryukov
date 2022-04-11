@@ -107,25 +107,70 @@ input {
   --foreground-body: #f2f2f2;
   --foreground-muted: #616161;
   --accent-primary: #DECEAB;
-  --accent-secoundary: #FFE5F2
+  --accent-secoundary: #FFE5F2;
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1)
 }
 body {
   background-color: var(--background-body);
-  color: var(--foreground-body)
-}
-.caption {
-  color: var(--foreground-muted)
+  color: var(--foreground-body);
+  font-size: 1.25rem
 }
 a,
 a:visited {
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
+  -webkit-transition: color .3s var(--ease-out-quint);
+  -o-transition: color .3s var(--ease-out-quint);
+  transition: color .3s var(--ease-out-quint)
+}
+a:hover {
+  color: var(--accent-primary)
+}
+.title {
+  font-size: 3.2em;
+  line-height: 1.0625em
+}
+.caption {
+  color: var(--foreground-muted);
+  margin-bottom: .8em;
+  line-height: 1.2em;
+  text-transform: uppercase
+}
+.date-groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: .9em
+}
+.date-group-caption {
+  font-size: .8em;
+  line-height: 1.25em
+}
+.date-group-text {
+  font-size: 1em;
+  line-height: 1.2em
 }
 .main-header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2,1fr)
+  grid-template-columns: repeat(2,1fr);
+  padding: .75rem 0 1.5em
+}
+.main-header-logo {
+  font-size: 2rem;
+  line-height: 1em
+}
+.main-header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  margin-top: .25em
 }
 .main-grid {
   display: -ms-grid;
@@ -144,7 +189,14 @@ a:visited {
 .promo {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-  grid-area: promo
+  grid-area: promo;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2,1fr);
+  min-height: 422px;
+  padding-top: 1.15em;
+  border-bottom: 2px solid var(--background-card)
 }
 .info {
   -ms-grid-row: 5;
@@ -152,13 +204,64 @@ a:visited {
   grid-area: info;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3,1fr)
+  -ms-grid-columns: (1fr)[12];
+  grid-template-columns: repeat(12,1fr);
+  grid-template-areas: "skills skills skills offset-1 works works works offset-2 studies studies studies offset-3";
+  padding: 2.85em 0 4.55em
+}
+.skills,
+.studies,
+.works {
+  padding-right: 1.6em
+}
+.skills {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: skills
+}
+.works {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: works
+}
+.studies {
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 3;
+  grid-area: studies
+}
+.skills-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 8px
+}
+.skills-item {
+  padding: 28px 20px;
+  background-color: var(--background-card);
+  border-radius: 42px
 }
 .projects {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: projects
+}
+.project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--background-card);
+  height: 680px
 }
 .main-footer {
   -ms-grid-row: 9;
@@ -169,5 +272,11 @@ a:visited {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2,1fr)
+  grid-template-columns: repeat(2,1fr);
+  padding: 2.7em 0 3.25em;
+  color: var(--foreground-muted)
+}
+.main-footer-github {
+  -ms-grid-column-align: end;
+  justify-self: end
 }
