@@ -135,6 +135,18 @@ a:visited {
 a:hover {
   color: var(--accent-primary)
 }
+.caption {
+  color: var(--foreground-muted);
+  margin-bottom: .8em;
+  line-height: 1.2em;
+  letter-spacing: .05em;
+  text-transform: uppercase
+}
+@media (max-width:420px) {
+  .caption {
+    font-size: .8em
+  }
+}
 .main-grid {
   display: -ms-grid;
   display: grid;
@@ -151,11 +163,6 @@ a:hover {
 }
 .main-grid {
   grid-template-areas: "header" "promo" "info" "projects" "footer"
-}
-.main-footer {
-  -ms-grid-row: 9;
-  -ms-grid-column: 1;
-  grid-area: footer
 }
 @media screen {
   .main-header {
@@ -276,20 +283,6 @@ a:hover {
   .promo__title {
     font-size: clamp(1.25rem,8vw,2rem);
     line-height: 1.2em
-  }
-}
-@media screen {
-  .caption {
-    color: var(--foreground-muted);
-    margin-bottom: .8em;
-    line-height: 1.2em;
-    letter-spacing: .05em;
-    text-transform: uppercase
-  }
-}
-@media screen and (max-width:420px) {
-  .caption {
-    font-size: .8em
   }
 }
 @media screen {
@@ -697,6 +690,9 @@ a:hover {
   }
 }
 .main-footer {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  grid-area: footer;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
