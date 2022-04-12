@@ -286,20 +286,6 @@ a:hover {
   }
 }
 @media screen {
-  .caption {
-    color: var(--foreground-muted);
-    margin-bottom: .8em;
-    line-height: 1.2em;
-    letter-spacing: .05em;
-    text-transform: uppercase
-  }
-}
-@media screen and (max-width:420px) {
-  .caption {
-    font-size: .8em
-  }
-}
-@media screen {
   .info {
     -ms-grid-row: 5;
     -ms-grid-column: 1;

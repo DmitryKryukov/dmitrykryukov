@@ -1,18 +1,4 @@
 @media screen {
-    .caption {
-        color: var(--foreground-muted);
-        margin-bottom: 0.8em;
-        line-height: 1.2em;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-
-        @media (max-width: 420px) {
-            & {
-                font-size: 0.8em;
-            }
-        }
-    }
-
     .info {
         --info-column-padding: 1.6em;
         grid-area: info;
