@@ -17,18 +17,17 @@
             &:hover {
                 .project-layer--idle {
                     opacity: 0;
-                    transition: opacity 0.3s var(--ease-out-quint);
+                    transition: opacity 0.6s var(--ease-out-quint);
                     pointer-events: none;
                 }
 
                 .project-layer--idle__typo {
                     transform: scale(1.2);
-                    transition: transform 0.8s var(--ease-out-quint);
+                    transition: transform 1.6s var(--ease-out-quint);
                 }
 
                 .project-layer--hover__sun-wrapper {
                     transform: scale(1);
-                    transition: transform 0.8s var(--ease-out-quint);
                 }
             }
         }
@@ -47,18 +46,18 @@
     }
 
     .project-layer--idle {
-        transition: opacity 0.3s var(--ease-out-quint);
+        transition: opacity 0.6s var(--ease-out-quint);
         z-index: 10;
     }
 
     .project-layer--idle__typo {
-        transition: transform 0.3s var(--ease-out-quint);
+        transition: transform 0.6s var(--ease-out-quint);
         width: clamp(10px, 80vw, 1080px);
     }
 
     .project-layer--hover__sun-wrapper {
         transform: scale(0.8);
-        transition: transform 0.3s var(--ease-out-quint);
+        transition: transform 0.6s var(--ease-out-quint);
         pointer-events: none;
     }
 

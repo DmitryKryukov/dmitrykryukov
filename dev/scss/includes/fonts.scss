@@ -1,10 +1,11 @@
 @font-face {
-    font-family: "TwentyTwelve";
-    src: url("../fonts/twenty-twelves.woff") format("woff");
+  font-family: 'TwentyTwelve';
+  src: url('../fonts/twenty-twelves.woff') format('woff');
 }
-
-body {
+@media screen {
+  body {
     font-size: 1.25rem;
     font-family: 'TwentyTwelve';
     font-feature-settings: 'ss01' on;
+  }
 }
