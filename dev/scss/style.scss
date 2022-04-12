@@ -1,7 +1,10 @@
-@import 'libraries/reset';
-@import 'variables';
-@import 'fonts';
+@import 'includes/reset';
+@import 'includes/variables';
+@import 'includes/fonts';
 @import 'basic';
-@import 'layouts/header';
-@import 'layouts/main';
-@import 'layouts/footer';
+@import 'floors/main';
+@import 'floors/header';
+@import 'floors/promo';
+@import 'floors/info';
+@import 'floors/project';
+@import 'floors/footer';

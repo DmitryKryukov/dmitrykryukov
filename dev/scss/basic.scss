@@ -1,63 +1,29 @@
 body {
-  font-size: 1.25rem;
-  font-family: 'TwentyTwelve';
-  font-feature-settings: 'ss01' on;
   background-color: var(--background-body);
   color: var(--foreground-body);
 }
+
 a,
 a:visited {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s var(--ease-out-quint);
 }
+
 a:hover {
   color: var(--accent-primary);
 }
-.title {
-  font-size: 6em;
-  line-height: 1em;
-  letter-spacing: -0.03em;
-}
-@media screen and (max-width: 1800px) {
-  .title {
-    font-size: clamp(4em, 6vw, 6em);
-  }
-}
-@media screen and (max-width: 1024px) {
-  .title {
-    font-size: clamp(2em, 10vw, 4em);
-  }
-}
-@media screen and (max-width: 500px) {
-  .title {
-    font-size: clamp(1.5rem, 8vw, 2rem);
-    line-height: 1.2em;
-    letter-spacing: -0.02em;
-  }
-}
+
 .caption {
   color: var(--foreground-muted);
   margin-bottom: 0.8em;
   line-height: 1.2em;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-}
-@media screen and (max-width: 420px) {
-  .caption {
-    font-size: 0.8em;
+
+  @media (max-width: 420px) {
+    & {
+      font-size: 0.8em;
+    }
   }
-}
-.date-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9em;
-}
-.date-group-caption {
-  font-size: 0.8em;
-  line-height: 1.25em;
-}
-.date-group-text {
-  font-size: 1em;
-  line-height: 1.2em;
 }

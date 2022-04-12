@@ -1,33 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
   const MAXSKILLSROTATION = 5
-  const ROTATE = true
-  if (ROTATE) {
-    const skillItems = document
-      .querySelectorAll('.skills-item')
-      .forEach((skillItem) => {
-        const randomRotation = Math.floor(
-          Math.random() * MAXSKILLSROTATION * 2 - MAXSKILLSROTATION
-        )
-        skillItem.style.transform = `rotate(${randomRotation}deg)`
-      })
-  }
+  const skillItems = document
+    .querySelectorAll('.info-skills__item')
+    .forEach((skillItem) => {
+      const randomRotation = Math.floor(
+        Math.random() * MAXSKILLSROTATION * 2 - MAXSKILLSROTATION
+      )
+      skillItem.style.transform = `rotate(${randomRotation}deg)`
+    })
 
-  const leftHand = document.querySelector('.project-hover-left')
-  const rightHand = document.querySelector('.project-hover-right')
-
-  const project = document.querySelector('.project')
+  const leftHand = document.getElementById('js-hand-left')
+  const rightHand = document.getElementById('js-hand-right')
+  const project = document.getElementById('js-project-hand')
   let projectHalfWidth = project.offsetWidth / 2
-
   window.addEventListener('resize', () => {
     projectHalfWidth = project.offsetWidth / 2
   })
 
   project.addEventListener('mousemove', (e) => {
+    //Магические математические выкрутасы, чтобы анимация работала плавно. Скорее всего в формулах можно что-то сократить или написать нормально. Но я тупой.
     const relativeCoordX = Math.abs(
       Math.abs(projectHalfWidth - e.offsetX) - projectHalfWidth
     )
-    const factorX = relativeCoordX / projectHalfWidth
-    const x = relativeCoordX - leftHand.offsetWidth * factorX
+    const factorPi = Math.sin((Math.PI * e.offsetX) / (project.offsetWidth * 2 - projectHalfWidth))
+    const factor = relativeCoordX / projectHalfWidth
+    const x = (relativeCoordX - 450 * factor) * factorPi
     const y = e.offsetY - leftHand.offsetHeight / 2
 
     leftHand.style.setProperty('--x-position', x + 'px')

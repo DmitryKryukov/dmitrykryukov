@@ -1,9 +1,10 @@
 .main-footer {
+  grid-area: footer;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 2.7em 0 3.25em;
   color: var(--foreground-muted);
 }
-.main-footer-github {
+.main-footer__github {
   justify-self: end;
 }

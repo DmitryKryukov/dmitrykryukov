@@ -5,66 +5,66 @@ block content
 		include includes/header.pug
 
 		.promo
-			h2.title Проектирую транспортные схемы, сайты и приложения, системы навигации в общественных местах.
+			h2.promo__title Проектирую транспортные схемы, сайты и приложения, системы навигации в общественных местах.
 
 		.info
-			.skills
+			.info-skills
 				h3.caption Навыки
-				ul.skills-set
-					li.skills-item Веб-дизайн
-					li.skills-item UX-дизайн
-					li.skills-item UI-дизайн
-					li.skills-item Дизайн-продуктов
-					li.skills-item Арт-дирекшн
-					li.skills-item Управление проектами
-					li.skills-item Брендинг
+				ul.info-skills-set
+					li.info-skills__item Веб-дизайн
+					li.info-skills__item UX-дизайн
+					li.info-skills__item UI-дизайн
+					li.info-skills__item Дизайн-продуктов
+					li.info-skills__item Арт-дирекшн
+					li.info-skills__item Управление проектами
+					li.info-skills__item Брендинг
 
-			.works
+			.info-works
 				h3.caption Опыт работы
-				.date-groups
-					.date-group
-						h4.date-group-caption 2021 – настоящее время
-						p.date-group-text Арт-директор — рекламное агентство «Картон»
-					.date-group
-						h4.date-group-caption 2018 – 2021
-						p.date-group-text Старший дизайнер — рекламное агентство «Вебмеханик»
-					.date-group
-						h4.date-group-caption 2016 – 2018
-						p.date-group-text Дизайнер — веб-студия «Машадизайн»
-					.date-group
-						h4.date-group-caption 2014
-						p.date-group-text Дизайнер — стриминговый сервис «Goodgame.ru»
+				.info-groups
+					.info-group
+						h4.info-group__caption 2021 – настоящее время
+						p.info-group__text Арт-директор — рекламное агентство «Картон»
+					.info-date-group
+						h4.info-group__caption 2018 – 2021
+						p.info-group__text Старший дизайнер — рекламное агентство «Вебмеханик»
+					.info-date-group
+						h4.info-group__caption 2016 – 2018
+						p.info-group__text Дизайнер — веб-студия «Машадизайн»
+					.info-date-group
+						h4.info-group__caption 2014
+						p.info-group__text Дизайнер — стриминговый сервис «Goodgame.ru»
 
-			.studies
+			.info-studies
 				h3.caption Образование
-				.date-groups
-					.date-group
-						h4.date-group-caption В процессе
-						p.date-group-text Школа дизайнеров — Бюро Горбунова
-					.date-group
-						h4.date-group-caption 2021
-						p.date-group-text Школа менеджеров — Яндекс
-					.date-group
-						h4.date-group-caption 2020
-						p.date-group-text UX-дизайн — Bangbang Education
-					.date-group
-						h4.date-group-caption 2012 – 2017
-						p.date-group-text Прикладная информатика — Астраханский государственный технический университет
+				.info-groups
+					.info-group
+						h4.info-group__caption В процессе
+						p.info-group__text Школа дизайнеров — Бюро Горбунова
+					.info-date-group
+						h4.info-group__caption 2021
+						p.info-group__text Школа менеджеров — Яндекс
+					.info-date-group
+						h4.info-group__caption 2020
+						p.info-group__text UX-дизайн — Bangbang Education
+					.info-date-group
+						h4.info-group__caption 2012 – 2017
+						p.info-group__text Прикладная информатика — Астраханский государственный технический университет
 
 		.projects
 			h3.caption Проекты
-			.project
-				.project-idle
-					img(src="images/opt/projects-placeholder.svg" alt="Скоро покажу работы").project-idle-typo
-				.project-hover
-					.project-hover-left
-						.project-hover-left-outline
-						.project-hover-left-mask
-					.project-hover-sun-wrapper
-						img.project-hover-sun(src="images/opt/projects-sun.svg" alt="Солнце")
-					.project-hover-right
-						.project-hover-right-outline
-						.project-hover-right-mask
+			#js-project-hand.project
+				.project-layer.project-layer--idle
+					img.project-layer--idle__typo(src="images/opt/projects-placeholder.svg" alt="Скоро покажу работы")
+				.project-layer.project-layer--hover
+					#js-hand-left.project-layer--hover-hand.project-layer--hover-hand-left
+						.project-layer--hover-hand-left__mask
+						.project-layer--hover-hand-left__outline
+					.project-layer--hover__sun-wrapper
+						img.project-layer--hover__sun(src="images/opt/projects-sun.svg" alt="Солнце")
+					#js-hand-right.project-layer--hover-hand.project-layer--hover-hand-right
+						.project-layer--hover-hand-right__mask
+						.project-layer--hover-hand-right__outline
 
 
 		include includes/footer.pug

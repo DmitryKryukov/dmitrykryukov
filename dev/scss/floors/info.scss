@@ -1,0 +1,135 @@
+@media screen {
+    .caption {
+        color: var(--foreground-muted);
+        margin-bottom: 0.8em;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        @media (max-width: 420px) {
+            & {
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    .info {
+        --info-column-padding: 1.6em;
+        grid-area: info;
+        display: grid;
+        grid-template-areas: 'skills skills skills offset-1 works works works offset-2 studies studies studies offset-3';
+        padding: 2.85em 0 4.55em;
+
+        @media (max-width: 1850px) {
+            & {
+                grid-template-areas: 'skills works studies';
+            }
+        }
+
+        @media (max-width: 1500px) {
+            & {
+                grid-template-areas:
+                    'skills skills skills skills skills skills skills skills skills skills skills skills'
+                    'works works works works works offset-1 studies studies studies studies studies offset-2';
+            }
+        }
+
+        @media (max-width: 1024px) {
+            & {
+                grid-template-areas:
+                    'skills skills'
+                    'works studies';
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            & {
+                grid-template-areas:
+                    'skills'
+                    'works'
+                    'studies';
+            }
+        }
+
+        @media (max-width: 500px) {
+            & {
+                --info-column-padding: 0;
+            }
+        }
+    }
+
+    .info-skills {
+        grid-area: skills;
+
+        @media (max-width: 1500px) {
+            & {
+                margin-bottom: 2em;
+            }
+        }
+
+        @media (max-width: 700px) {
+            & {
+                margin-bottom: 4.55em;
+            }
+        }
+
+    }
+
+    .info-skills-set {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: -4px;
+    }
+
+    .info-skills__item {
+        padding: 26px 20px 30px 20px;
+        background-color: var(--background-card);
+        border-radius: 1000px;
+
+        @media (max-width: 500px) {
+            &:nth-child(6) {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 420px) {
+            & {
+                padding: 12px;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    .info-works {
+        grid-area: works;
+        padding-right: var(--info-column-padding);
+
+        @media (max-width: 700px) {
+            & {
+                margin-bottom: 4.55em;
+            }
+        }
+    }
+
+    .info-studies {
+        grid-area: studies;
+        padding-right: var(--info-column-padding);
+    }
+
+    .info-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9em;
+    }
+
+    .info-group__caption {
+        font-size: 0.8em;
+        line-height: 1.25em;
+    }
+
+    .info-group__text {
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+}

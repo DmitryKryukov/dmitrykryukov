@@ -1,0 +1,22 @@
+.main-grid {
+  display: grid;
+  grid-gap: 8px;
+  padding: 0 8px;
+  margin: auto;
+  width: 100%;
+  max-width: 1920px;
+}
+@media screen and (max-width: 800px) {
+  .main-grid {
+    padding: 0 16px;
+  }
+}
+
+.main-grid {
+  grid-template-areas:
+    'header'
+    'promo'
+    'info'
+    'projects'
+    'footer';
+}
