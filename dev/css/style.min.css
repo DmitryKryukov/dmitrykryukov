@@ -755,7 +755,7 @@ input {
     white-space: nowrap
   }
   .main-header-nav__telegram::after {
-    content: ": @kryukov-design";
+    content: ": @kryukovdesign";
     white-space: nowrap
   }
   .main-header-nav__email--big-screen {
