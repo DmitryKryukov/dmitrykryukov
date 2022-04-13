@@ -4,7 +4,7 @@
     grid-area: header;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: .75em 0 1.5em;
+    padding: 0.75em 0 1.5em;
 
     @media (max-width: 800px) {
       --nav-gap: 1rem;
@@ -12,17 +12,18 @@
 
     @media (max-width: 500px) {
       & {
-        --nav-gap: .25rem;
+        --nav-gap: 0.25rem;
         padding-bottom: 0;
       }
     }
   }
 
   .main-header__logo {
+    display: flex;
     font-size: 2rem;
     line-height: 1em;
     white-space: nowrap;
-
+    gap: 0.5rem;
     @media (max-width: 800px) {
       & {
         margin-right: var(--nav-gap);
@@ -35,11 +36,25 @@
       }
     }
   }
-
+  .main-header__photo-wrapper {
+    height: 1em;
+  }
+  .main-header__photo {
+    border-radius: 50%;
+    width: 1.125em;
+    height: 1.125em;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    @media (max-width: 500px) {
+      width: 1.5em;
+      height: 1.5em;
+      margin-top: -0.1875em;
+    }
+  }
   .main-header-nav {
     display: flex;
     gap: var(--nav-gap);
-    margin-top: .25em;
+    margin-top: 0.25em;
 
     @media (max-width: 800px) {
       & {
