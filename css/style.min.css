@@ -190,8 +190,8 @@ input {
 }
 @media screen and (max-width:500px) {
   .main-header {
-    --nav-gap: 0.25rem;
-    padding-bottom: 0
+    --nav-gap: 0.5rem;
+    padding: 1em 0 0
   }
 }
 @media screen {
@@ -233,7 +233,7 @@ input {
   .main-header__photo {
     width: 1.5em;
     height: 1.5em;
-    margin-top: -.25em
+    margin-top: -.3em
   }
 }
 @media screen {
