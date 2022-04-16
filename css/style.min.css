@@ -117,7 +117,7 @@ input {
 @media screen {
   body {
     font-size: 1.25rem;
-    font-family: TwentyTwelve;
+    font-family: TwentyTwelve,sans-serif;
     -webkit-font-feature-settings: "ss01" on;
     font-feature-settings: "ss01" on
   }
