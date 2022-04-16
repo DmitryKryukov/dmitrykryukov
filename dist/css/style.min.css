@@ -136,7 +136,10 @@ input {
     transition: color .3s var(--ease-out-quint)
   }
   a:hover {
-    color: var(--accent-primary)
+    color: var(--accent-primary);
+    -webkit-transition: initial;
+    -o-transition: initial;
+    transition: initial
   }
   .caption {
     color: var(--foreground-muted);
