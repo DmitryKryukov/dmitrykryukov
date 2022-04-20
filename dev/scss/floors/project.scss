@@ -86,8 +86,10 @@
     .project-layer--hover-hand-left {
         --x-position: 20%;
         --y-position: calc(50% - 128px);
+        --rotation: 0;
         left: var(--x-position);
         top: var(--y-position);
+        transform: rotate(var(--rotation));
 
         &,
         &__mask,
@@ -120,8 +122,11 @@
     .project-layer--hover-hand-right {
         --x-position: 20%;
         --y-position: calc(50% - 150px);
+        --rotation: 0;
         right: var(--x-position);
         top: var(--y-position);
+        transform: rotate(var(--rotation));
+
 
         &,
         &__mask,
