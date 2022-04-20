@@ -652,8 +652,12 @@ input {
   .project-layer--hover-hand-left {
     --x-position: 20%;
     --y-position: calc(50% - 128px);
+    --rotation: 0;
     left: var(--x-position);
-    top: var(--y-position)
+    top: var(--y-position);
+    -webkit-transform: rotate(var(--rotation));
+    -ms-transform: rotate(var(--rotation));
+    transform: rotate(var(--rotation))
   }
   .project-layer--hover-hand-left,
   .project-layer--hover-hand-left__mask,
@@ -684,8 +688,12 @@ input {
   .project-layer--hover-hand-right {
     --x-position: 20%;
     --y-position: calc(50% - 150px);
+    --rotation: 0;
     right: var(--x-position);
-    top: var(--y-position)
+    top: var(--y-position);
+    -webkit-transform: rotate(var(--rotation));
+    -ms-transform: rotate(var(--rotation));
+    transform: rotate(var(--rotation))
   }
   .project-layer--hover-hand-right,
   .project-layer--hover-hand-right__mask,
