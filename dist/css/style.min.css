@@ -103,11 +103,11 @@ input {
 }
 :root {
   --background-body: #000;
-  --background-card: #141414;
+  --background-card: #131313;
   --foreground-body: #f2f2f2;
   --foreground-muted: #616161;
-  --accent-primary: #DECEAB;
-  --accent-secoundary: #FFE5F2;
+  --accent-primary: #deceab;
+  --accent-secoundary: #ffe5f2;
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1)
 }
 @font-face {
@@ -721,8 +721,10 @@ input {
   }
 }
 @media screen {
+  .projects {
+    grid-area: projects
+  }
   .project {
-    grid-area: projects;
     position: relative;
     height: 680px;
     background-color: var(--background-card);
@@ -762,6 +764,140 @@ input {
 @media screen {
   .project--wide {
     height: clamp(720px,100vh - 1rem,953px)
+  }
+}
+@media screen {
+  .project--wide__text {
+    width: 50%
+  }
+}
+@media screen {
+  .project-wide-wrapper {
+    border-bottom: 2px solid var(--background-card);
+    padding-bottom: 6rem
+  }
+}
+@media screen {
+  .project-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px
+  }
+}
+@media screen {
+  .project-row__text {
+    width: 100%;
+    padding: 16px 16px 28px
+  }
+}
+@media screen {
+  .project--medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 100%;
+    height: clamp(720px,100vh - 1rem,953px);
+    padding: 16px 16px 28px
+  }
+}
+@media screen {
+  .project--small {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 100%;
+    height: 500px;
+    padding: 16px 16px 28px
+  }
+}
+@media screen {
+  .project-title {
+    font-size: 48px;
+    margin-top: .25em;
+    margin-bottom: .33em
+  }
+}
+@media screen {
+  .project-name {
+    font-size: 28px;
+    margin-bottom: .33em
+  }
+}
+@media screen {
+  .project-lead {
+    font-size: 28px
+  }
+}
+@media screen {
+  .project-description p {
+    margin-bottom: 1em;
+    line-height: 1.3em
+  }
+  .project-description .feature:after {
+    content: "";
+    display: inline-block;
+    width: 72px;
+    height: 50px;
+    margin-left: 8px;
+    margin-top: -100%;
+    margin-bottom: -18px;
+    background-color: var(--background-card);
+    border-radius: 4px;
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg)
+  }
+}
+@media screen {
+  .project-tags {
+    -webkit-font-feature-settings: initial;
+    font-feature-settings: initial;
+    color: var(--foreground-muted);
+    margin-top: .4em
+  }
+}
+@media screen {
+  .project-image-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%
+  }
+}
+@media screen {
+  .project-base-image {
+    background-color: #212121;
+    width: 80%;
+    border-radius: 4px;
+    overflow: hidden
+  }
+}
+@media screen {
+  .project-base-image-ratio {
+    padding-bottom: 56.25%
   }
 }
 @media screen {
@@ -837,7 +973,7 @@ input {
     -ms-grid-row: 7;
     -ms-grid-column: 1
   }
-  .project {
+  .projects {
     -ms-grid-row: 7;
     -ms-grid-column: 1
   }

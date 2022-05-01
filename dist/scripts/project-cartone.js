@@ -10,6 +10,9 @@ export function projectCartoneInit() {
         window.addEventListener('scroll', (e) => {
           projectCartoneParallax(entry)
         })
+        window.addEventListener('resize', (e) => {
+          projectCartoneParallax(entry)
+        })
       }
     })
     function projectCartoneParallax(entry) {
