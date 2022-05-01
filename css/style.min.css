@@ -172,7 +172,7 @@ input {
 }
 @media screen {
   .main-grid {
-    grid-template-areas: "header" "promo" "info" "projects" "footer"
+    grid-template-areas: "header" "promo" "info" "projects" "graveyard" "footer"
   }
 }
 @media screen {
@@ -947,6 +947,45 @@ input {
     transform: translateY(var(--things-y)) rotate(var(--things-rotation))
   }
 }
+.graveyard {
+  grid-area: "graveyard";
+  margin-top: 4.55em
+}
+.graveyard-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px
+}
+.grave {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  height: 440px;
+  background-color: var(--background-card);
+  border-radius: 180px 180px 4px 4px;
+  width: 100%;
+  padding: 20px 24px 48px
+}
+.grave-text {
+  text-align: center;
+  font-size: .8em;
+  line-height: 1.25em
+}
+.grave--empty {
+  opacity: 0
+}
+.grave--another {
+  background-color: initial;
+  border: 2px dashed var(--foreground-muted)
+}
 .main-footer {
   grid-area: footer;
   display: -ms-grid;
@@ -978,7 +1017,7 @@ input {
     -ms-grid-column: 1
   }
   .main-footer {
-    -ms-grid-row: 9;
+    -ms-grid-row: 11;
     -ms-grid-column: 1
   }
 }
