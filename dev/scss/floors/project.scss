@@ -1,6 +1,8 @@
 @media screen {
-  .project {
+  .projects {
     grid-area: projects;
+  }
+  .project {
     position: relative;
     height: 680px;
     background-color: var(--background-card);
@@ -34,6 +36,92 @@
   }
   .project--wide {
     height: clamp(720px, calc(100vh - 1rem), 953px);
+  }
+  .project--wide__text {
+    width: 50%;
+  }
+  .project-wide-wrapper {
+    border-bottom: 2px solid var(--background-card);
+    padding-bottom: 6rem;
+  }
+
+  .project-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .project-row__text {
+    width: 100%;
+    padding: 16px 16px 28px;
+  }
+  .project--medium {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: clamp(720px, calc(100vh - 1rem), 953px);
+    padding: 16px 16px 28px;
+  }
+  .project--small {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 500px;
+    padding: 16px 16px 28px;
+  }
+
+  .project-title {
+    font-size: 48px;
+    margin-top: 0.25em;
+    margin-bottom: 0.33em;
+  }
+  .project-name {
+    font-size: 28px;
+    margin-bottom: 0.33em;
+  }
+
+  .project-lead {
+    font-size: 28px;
+  }
+  .project-description {
+    p {
+      margin-bottom: 1em;
+      line-height: 1.3em;
+    }
+    .feature:after {
+      content: '';
+      display: inline-block;
+      width: 72px;
+      height: 50px;
+      margin-left: 8px;
+      margin-top: -100%;
+      margin-bottom: -18px;
+      background-color: var(--background-card);
+      border-radius: 4px;
+      transform: rotate(-5deg);
+    }
+  }
+  .project-tags {
+    font-feature-settings: initial;
+    color: var(--foreground-muted);
+    margin-top: 0.4em;
+  }
+  .project-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .project-base-image {
+    background-color: #212121;
+    width: 80%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .project-base-image-ratio {
+    padding-bottom: 56.25%;
   }
   .project--cartone {
     background: url('/images/opt/projects/cartone/cartone-background-emboss.jpg'),
