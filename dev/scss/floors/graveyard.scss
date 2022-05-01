@@ -1,0 +1,30 @@
+.graveyard {
+  grid-area: 'graveyard';
+  margin-top: 4.55em;
+}
+.graveyard-row {
+  display: flex;
+  gap: 8px;
+}
+.grave {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 440px;
+  background-color: var(--background-card);
+  border-radius: 180px 180px 4px 4px;
+  width: 100%;
+  padding: 20px 24px 48px;
+}
+.grave-text {
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.25em;
+}
+.grave--empty {
+  opacity: 0;
+}
+.grave--another {
+  background-color: initial;
+  border: 2px dashed var(--foreground-muted);
+}
