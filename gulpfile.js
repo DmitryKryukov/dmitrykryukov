@@ -89,13 +89,13 @@ function build() {
   return src(
     [
       'dev/css/**/*.min.css',
-      'dev/scripts/**/*.min.js',
+      'dev/scripts/**/*.js',
       'dev/images/opt/**/*',
       'dev/fonts/*',
       'dev/*.html',
       'dev/static/**/*',
       'dev/favicon.svg',
-      'dev/favicon.ico'
+      'dev/favicon.ico',
     ],
     { base: 'dev' }
   ).pipe(dest('dist'))
