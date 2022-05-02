@@ -985,26 +985,26 @@ input {
   mask-size: 100% 100%
 }
 .grave-wrapper:nth-child(1) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave-1.svg);
-  mask-image: url(../images/opt/graveyard/grave-1.svg)
+  -webkit-mask-image: url(../images/opt/graveyard/grave--1.svg);
+  mask-image: url(../images/opt/graveyard/grave--1.svg)
 }
 .grave-wrapper:nth-child(2) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave-2.svg);
-  mask-image: url(../images/opt/graveyard/grave-2.svg)
+  -webkit-mask-image: url(../images/opt/graveyard/grave--2.svg);
+  mask-image: url(../images/opt/graveyard/grave--2.svg)
 }
 .grave-wrapper:nth-child(3) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave-3.svg);
-  mask-image: url(../images/opt/graveyard/grave-3.svg)
+  -webkit-mask-image: url(../images/opt/graveyard/grave--3.svg);
+  mask-image: url(../images/opt/graveyard/grave--3.svg)
 }
 .grave-wrapper:nth-child(4) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave-4.svg);
-  mask-image: url(../images/opt/graveyard/grave-4.svg)
+  -webkit-mask-image: url(../images/opt/graveyard/grave--4.svg);
+  mask-image: url(../images/opt/graveyard/grave--4.svg)
 }
 .grave-wrapper:last-child .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave-last.svg);
-  mask-image: url(../images/opt/graveyard/grave-last.svg);
-  background: url(../images/opt/graveyard/grave-last-outline.svg) no-repeat center/100% 100%,-o-radial-gradient(50% 25%,440px 440px,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%);
-  background: url(../images/opt/graveyard/grave-last-outline.svg) no-repeat center/100% 100%,radial-gradient(440px 440px at 50% 25%,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%)
+  -webkit-mask-image: url(../images/opt/graveyard/grave--last.svg);
+  mask-image: url(../images/opt/graveyard/grave--last.svg);
+  background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,-o-radial-gradient(50% 25%,440px 440px,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%);
+  background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,radial-gradient(440px 440px at 50% 25%,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%)
 }
 .grave__text {
   font-size: .8em;

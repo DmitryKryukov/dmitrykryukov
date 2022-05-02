@@ -24,20 +24,20 @@
   mask-size: 100% 100%;
 }
 .grave-wrapper:nth-child(1) .grave {
-  mask-image: url('../images/opt/graveyard/grave-1.svg');
+  mask-image: url('../images/opt/graveyard/grave--1.svg');
 }
 .grave-wrapper:nth-child(2) .grave {
-  mask-image: url('../images/opt/graveyard/grave-2.svg');
+  mask-image: url('../images/opt/graveyard/grave--2.svg');
 }
 .grave-wrapper:nth-child(3) .grave {
-  mask-image: url('../images/opt/graveyard/grave-3.svg');
+  mask-image: url('../images/opt/graveyard/grave--3.svg');
 }
 .grave-wrapper:nth-child(4) .grave {
-  mask-image: url('../images/opt/graveyard/grave-4.svg');
+  mask-image: url('../images/opt/graveyard/grave--4.svg');
 }
 .grave-wrapper:last-child .grave {
-  mask-image: url('../images/opt/graveyard/grave-last.svg');
-  background: url('../images/opt/graveyard/grave-last-outline.svg') no-repeat
+  mask-image: url('../images/opt/graveyard/grave--last.svg');
+  background: url('../images/opt/graveyard/grave--last-outline.svg') no-repeat
       center / 100% 100%,
     radial-gradient(440px 440px at 50% 25%, #ffefcc13 0%, #ffe5f200 100%);
 }
