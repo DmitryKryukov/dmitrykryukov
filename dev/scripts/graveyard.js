@@ -1,49 +1,103 @@
 export function graveyardInit() {
-  class TP {
-    constructor(text, x, y, z, speed, type, sr, er, container) {
-      this.text = text
-      this.x = x
-      this.y = y
-      this.z = z
-      this.sr = sr
-      this.er = er
+  let canvas = document.querySelector('#js-grave-particles')
+  let ctx = canvas.getContext('2d')
 
-      this.speed = speed
-      this.type = type
-      this.container = container
-      this.born()
+  class GraveParticle {
+    constructor(x, y, radius, color, minVelocity, maxVelocity, ctx) {
+      this.x = x || 0
+      this.y = y || 0
+      this.initialX = x
+      this.initialY = y
+      this.radius = radius || 10
+      this.color = color || '#DECEAB'
+      this.force = { x: (Math.random() * 20 - 10) * 0.35, y: Math.random() }
+      this.minVelocity = minVelocity || 5
+      this.maxVelocity = maxVelocity || 10
+      this.velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity
+      this.gravity = 2.5
+
+      this.ctx = ctx
     }
-    born() {
-      const el = document.createElement('span')
-      el.classList.add('grave-particle')
-      el.innerHTML = this.text
-      this.container.append(el)
-      el.style.setProperty('--grave-particle-x', this.x + 'px')
-      el.style.setProperty('--grave-particle-y', this.y + 'px')
-      el.style.setProperty('--grave-particle-z', this.z)
-      el.style.setProperty('--grave-particle-speed', this.speed + 's')
-      el.style.setProperty(
-        '--grave-particle-color',
-        this.type > 0.5 ? '#FFE5F2' : '#DECEAB'
+    move() {
+      this.x += this.force.x * this.velocity
+      this.y += this.force.y * this.velocity + this.gravity
+    }
+    draw(ctx) {
+      ctx.beginPath()
+      ctx.arc(
+        this.x - this.radius / 2,
+        this.y - this.radius / 2,
+        this.radius,
+        0,
+        2 * Math.PI
       )
-      el.style.setProperty('--grave-particle-start-rot', this.sr + 'deg')
-      el.style.setProperty('--grave-particle-end-rot', this.er + 'deg')
+      ctx.fillStyle = this.color
+      ctx.fill()
+      if (this.y > canvas.offsetHeight * 2 + 20) {
+        this.x = this.initialX
+        this.y = this.initialY
+      }
+      this.move()
     }
   }
-  const grave = document.querySelector('#js-grave-particles')
-  console.log(grave.innerWidth)
-  const Q = 40
-  for (var i = 0; i < Q; i++) {
-    let tp = new TP(
-      Math.random() > 0.5 ? 'Ура' : 'Еах!',
-      Math.random() * 100 - 200,
-      Math.random() * grave.offsetWidth,
-      Math.random() * 0.9 + 0.1,
-      Math.random() * 5 + 5,
-      Math.random(),
-      Math.random() * 90 - 45,
-      Math.random() * 90 - 45,
-      grave
-    )
+
+  class ParticleSystem {
+    constructor(
+      birthRate,
+      minRadius,
+      maxRadius,
+      minVelocity,
+      maxVelocity,
+      ctx
+    ) {
+      this.particles = []
+      this.birthRate = birthRate
+      this.particleBirth(birthRate)
+      this.minRadius = minRadius
+      this.maxRadius = maxRadius
+      this.minVelocity = minVelocity
+      this.maxVelocity = maxVelocity
+      this.ctx = ctx
+    }
+    particleBirth(birthRate = this.burthRate) {
+      for (let i = 0; i < birthRate; i++) {
+        let color = '#DECEAB'
+        if (i % 3 == 0) {
+          color = '#FFE5F2'
+        }
+        if (i % 11 == 0) {
+          color = '#e73f19'
+        }
+        this.particles.push(
+          new GraveParticle(
+            Math.random() * canvas.offsetWidth * 2,
+            Math.random() * -canvas.offsetHeight * 2,
+            Math.random() * (this.maxRadius - this.minRadius) + this.minRadius,
+            color,
+            this.minVelocity,
+            this.maxVelocity,
+            this.ctx
+          )
+        )
+      }
+    }
+    render(ctx) {
+      ctx.clearRect(0, 0, 612, 880)
+      this.particles.forEach((particle) => {
+        particle.draw(ctx)
+      })
+    }
   }
+
+  let particleSystem = new ParticleSystem(200, 2, 8, 0.1, 0.5, ctx)
+  function Render() {
+    window.requestAnimationFrame(Render)
+    particleSystem.render(ctx)
+  }
+  function Burst() {
+    particleSystem.particles = []
+    particleSystem.particleBirth(100)
+  }
+  Burst()
+  Render()
 }

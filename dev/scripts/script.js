@@ -1,3 +1,4 @@
+import { graveyardInit } from './graveyard.js'
 import { handAnimationInit } from './hand-animation.js'
 import { projectCartoneInit } from './project-cartone.js'
 
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   if (window.location.href.indexOf('test') > -1) {
     projectCartoneInit()
+    graveyardInit()
   } else {
     handAnimationInit()
   }
