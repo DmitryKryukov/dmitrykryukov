@@ -947,156 +947,172 @@ input {
     transform: translateY(var(--things-y)) rotate(var(--things-rotation))
   }
 }
-.graveyard {
-  grid-area: "graveyard";
-  margin-top: 4.55em
-}
-.graveyard-row {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[6];
-  grid-template-columns: repeat(6,1fr);
-  grid-gap: 8px
-}
-.grave-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 142.93%
-}
-.grave {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 0 36px 56px;
-  background: -webkit-gradient(linear,left top,left bottom,from(#212121),to(var(--background-card)));
-  background: -o-linear-gradient(#212121,var(--background-card));
-  background: linear-gradient(#212121,var(--background-card));
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%
-}
-.grave-wrapper:nth-child(1) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave--1.svg);
-  mask-image: url(../images/opt/graveyard/grave--1.svg)
-}
-.grave-wrapper:nth-child(2) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave--2.svg);
-  mask-image: url(../images/opt/graveyard/grave--2.svg)
-}
-.grave-wrapper:nth-child(3) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave--3.svg);
-  mask-image: url(../images/opt/graveyard/grave--3.svg)
-}
-.grave-wrapper:nth-child(4) .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave--4.svg);
-  mask-image: url(../images/opt/graveyard/grave--4.svg)
-}
-.grave-wrapper:last-child .grave {
-  -webkit-mask-image: url(../images/opt/graveyard/grave--last.svg);
-  mask-image: url(../images/opt/graveyard/grave--last.svg);
-  background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,-o-radial-gradient(50% 25%,440px 440px,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%);
-  background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,radial-gradient(440px 440px at 50% 25%,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%)
-}
-.grave__text {
-  font-size: .8em;
-  line-height: 1.25em;
-  text-align: center
-}
-.grave__image {
-  height: 100%;
-  margin-bottom: .5rem
-}
-.grave__image__yeah {
-  position: relative;
-  font-size: 100px;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-.grave__image__yeah--back,
-.grave__image__yeah--front {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  -webkit-filter: contrast(2.7) brightness(.9) saturate(3);
-  filter: contrast(2.7) brightness(.9) saturate(3)
-}
-.grave__image__yeah--front {
-  color: var(--accent-primary);
-  z-index: 1;
-  mix-blend-mode: difference;
-  -webkit-transform-origin: 90% 25%;
-  -ms-transform-origin: 90% 25%;
-  transform-origin: 90% 25%;
-  -webkit-animation: .2s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-1;
-  animation: .2s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-1
-}
-@-webkit-keyframes wiggle-1 {
-  from {
-    -webkit-transform: rotate(3deg);
-    transform: rotate(3deg)
+@media screen {
+  .graveyard {
+    grid-area: "graveyard";
+    margin-top: 4.55em
   }
-  to {
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg)
+  .graveyard-row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 8px
   }
-}
-@keyframes wiggle-1 {
-  from {
-    -webkit-transform: rotate(3deg);
-    transform: rotate(3deg)
+  .grave-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 142.93%
   }
-  to {
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg)
+  .grave {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 36px 56px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#212121),to(var(--background-card)));
+    background: -o-linear-gradient(#212121,var(--background-card));
+    background: linear-gradient(#212121,var(--background-card));
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%
   }
-}
-.grave__image__yeah--back {
-  color: var(--accent-secondary);
-  -webkit-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  -webkit-transform-origin: 45% 45%;
-  -ms-transform-origin: 45% 45%;
-  transform-origin: 45% 45%;
-  -webkit-animation: .25s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-2;
-  animation: .25s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-2
-}
-@-webkit-keyframes wiggle-2 {
-  from {
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg)
+  .grave-wrapper:nth-child(1) .grave {
+    -webkit-mask-image: url(../images/opt/graveyard/grave--1.svg);
+    mask-image: url(../images/opt/graveyard/grave--1.svg)
   }
-  to {
-    -webkit-transform: rotate(7deg);
-    transform: rotate(7deg)
+  .grave-wrapper:nth-child(2) .grave {
+    -webkit-mask-image: url(../images/opt/graveyard/grave--2.svg);
+    mask-image: url(../images/opt/graveyard/grave--2.svg)
   }
-}
-@keyframes wiggle-2 {
-  from {
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg)
+  .grave-wrapper:nth-child(3) .grave {
+    -webkit-mask-image: url(../images/opt/graveyard/grave--3.svg);
+    mask-image: url(../images/opt/graveyard/grave--3.svg)
   }
-  to {
-    -webkit-transform: rotate(7deg);
-    transform: rotate(7deg)
+  .grave-wrapper:nth-child(4) .grave {
+    -webkit-mask-image: url(../images/opt/graveyard/grave--4.svg);
+    mask-image: url(../images/opt/graveyard/grave--4.svg)
+  }
+  .grave-wrapper:last-child .grave {
+    -webkit-mask-image: url(../images/opt/graveyard/grave--last.svg);
+    mask-image: url(../images/opt/graveyard/grave--last.svg);
+    background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,-o-radial-gradient(50% 25%,440px 440px,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%);
+    background: url(../images/opt/graveyard/grave--last-outline.svg) no-repeat center/100% 100%,radial-gradient(440px 440px at 50% 25%,rgba(255,239,204,.0745098039) 0,rgba(255,229,242,0) 100%)
+  }
+  .grave__text {
+    font-size: .8em;
+    line-height: 1.25em;
+    text-align: center
+  }
+  .grave__image {
+    height: 100%;
+    margin-bottom: .5rem
+  }
+  .grave__image__yeah {
+    position: relative;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  .grave__image__yeah--back,
+  .grave__image__yeah--front {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    -webkit-filter: contrast(2.7) brightness(.9) saturate(3);
+    filter: contrast(2.7) brightness(.9) saturate(3)
+  }
+  .grave__image__yeah--front {
+    color: var(--accent-primary);
+    z-index: 1;
+    mix-blend-mode: difference;
+    -webkit-transform-origin: 90% 25%;
+    -ms-transform-origin: 90% 25%;
+    transform-origin: 90% 25%;
+    -webkit-animation: .2s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-1;
+    animation: .2s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-1
+  }
+  @-webkit-keyframes wiggle-1 {
+    from {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg)
+    }
+    to {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg)
+    }
+  }
+  @keyframes wiggle-1 {
+    from {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg)
+    }
+    to {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg)
+    }
+  }
+  .grave__image__yeah--back {
+    color: var(--accent-secondary);
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 45% 45%;
+    -ms-transform-origin: 45% 45%;
+    transform-origin: 45% 45%;
+    -webkit-animation: .25s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-2;
+    animation: .25s cubic-bezier(.83,0,.17,1) infinite alternate wiggle-2
+  }
+  @-webkit-keyframes wiggle-2 {
+    from {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg)
+    }
+    to {
+      -webkit-transform: rotate(7deg);
+      transform: rotate(7deg)
+    }
+  }
+  @keyframes wiggle-2 {
+    from {
+      -webkit-transform: rotate(-4deg);
+      transform: rotate(-4deg)
+    }
+    to {
+      -webkit-transform: rotate(7deg);
+      transform: rotate(7deg)
+    }
+  }
+  .grave-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-gradient(linear,left top,left bottom,from(#000),to(transparent));
+    -webkit-mask-image: linear-gradient(#000,transparent);
+    mask-image: -webkit-gradient(linear,left top,left bottom,from(#000),to(transparent));
+    mask-image: linear-gradient(#000,transparent);
+    -webkit-filter: blur(1px);
+    filter: blur(1px)
   }
 }
 .main-footer {
