@@ -7,15 +7,17 @@ mixin project--wide(title, description)
       h4.project-title= title
       .project-lead= description
 
-mixin project--medium(title, description)
+mixin project--medium(title, description, src, alt)
   .project.project--medium(class!=attributes.class)
     .project-image
       .project-image__outer
         .project-image__inner
+          if src
+            img.project-image__absolute(src=src, alt=alt)
     h4.project-name= title
     .project-description= description
 
-mixin project--small(title, description)
+mixin project--small(title, description, src, alt)
   .project.project--small(class!=attributes.class)
     .project-image
       if block
@@ -23,6 +25,8 @@ mixin project--small(title, description)
       else
         .project-image__outer
           .project-image__inner
+            if src
+              img.project-image__absolute(src=src, alt=alt)
     h4.project-name= title
     .project-description= description
 
@@ -45,7 +49,7 @@ mixin project--small(title, description)
 
     .project-row
       +project--medium('Стрит авто', 'Лучший шаблон для быстрого запуска рекламы').project--strit
-      +project--medium('Лада нью', 'Переосмысливаем структуру автосайта')
+      +project--medium('Лада нью', 'Переосмысливаем структуру автосайта', 'images/opt/projects/lada-neue/lada-neue-layer-0.png')
 
     .project-row.project-row--wrap
       +project--small('Медуза фридом', 'Маленький шрифт, для борьбы с большой цензурой').project--meduza

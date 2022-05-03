@@ -63,15 +63,27 @@
       width: 80%;
       border-radius: 4px;
       overflow: hidden;
+      transform: rotate(-1deg);
       @media (max-width: 1500px) {
         width: 85%;
       }
       @media (max-width: 1024px) {
         width: 90%;
       }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
     }
     .project-image__inner {
+      position: relative;
       padding-bottom: 56.25%;
+      .project-image__absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   .project--medium {
@@ -90,7 +102,7 @@
     }
     @media (max-width: 500px) {
       grid-column: span 6;
-      height: clamp(500px, calc(50vw - 1rem), calc(100vh - 1rem));
+      height: clamp(400px, calc(50vw - 1rem), calc(100vh - 1rem));
       .project-description {
         display: initial;
       }
