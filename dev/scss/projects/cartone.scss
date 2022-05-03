@@ -1,64 +1,62 @@
-@media screen {
-  .project--cartone {
-    .project-image {
-      background: url('/images/opt/projects/cartone/cartone-background-emboss.jpg'),
-        radial-gradient(100% 100% at 50% 0%, #a68059 0%, #604939 100%);
-      background-blend-mode: overlay;
-      &__layer {
-        transition: opacity 0.15s ease-out;
-      }
+.project--cartone {
+  .project-image {
+    background: url('/images/opt/projects/cartone/cartone-background-emboss.jpg'),
+      radial-gradient(100% 100% at 50% 0%, #a68059 0%, #604939 100%);
+    background-blend-mode: overlay;
+    &__layer {
+      transition: opacity 0.15s ease-out;
     }
   }
-  .project--cartone {
-    .project--cartone__layer--2 {
-      z-index: 3;
+}
+.project--cartone {
+  .project--cartone__layer--2 {
+    z-index: 3;
+  }
+  .project--cartone__layer--2__instagram-post {
+    --instagram-post-y: 0;
+    --instagram-post-rotation: 0;
+    position: absolute;
+    top: 65%;
+    left: Min(10.41vw, 200px);
+    width: Min(23.02vw, 442px);
+    height: Min(23.02vw, 442px);
+    opacity: 0;
+    transform: translateY(var(--instagram-post-y))
+      rotate(var(--instagram-post-rotation));
+    @media (max-width: 800px) {
+      width: Clamp(150px, 37.5vw, 300px);
+      height: Clamp(150px, 37.5vw, 300px);
+      left: initial;
+      top: 80%;
+      right: 0;
     }
-    .project--cartone__layer--2__instagram-post {
-      --instagram-post-y: 0;
-      --instagram-post-rotation: 0;
-      position: absolute;
-      top: 65%;
-      left: Min(10.41vw, 200px);
-      width: Min(23.02vw, 442px);
-      height: Min(23.02vw, 442px);
-      opacity: 0;
-      transform: translateY(var(--instagram-post-y))
-        rotate(var(--instagram-post-rotation));
-      @media (max-width: 800px) {
-        width: Clamp(150px, 37.5vw, 300px);
-        height: Clamp(150px, 37.5vw, 300px);
-        left: initial;
-        top: 80%;
-        right: 0;
-      }
-      @media (max-width: 500px) {
-        right: -5vw;
-      }
+    @media (max-width: 500px) {
+      right: -5vw;
     }
-    .project--cartone__layer--1 img,
-    .project--cartone__layer--0 img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+  }
+  .project--cartone__layer--1 img,
+  .project--cartone__layer--0 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .project--cartone__layer--0 {
+    top: 12vw;
+    opacity: 0;
+    transform: translateY(var(--things-y)) rotate(var(--things-rotation));
+    @media (max-width: 1200px) {
+      top: 10vw;
     }
-    .project--cartone__layer--0 {
-      top: 12vw;
-      opacity: 0;
-      transform: translateY(var(--things-y)) rotate(var(--things-rotation));
-      @media (max-width: 1200px) {
-        top: 10vw;
-      }
-      @media (max-width: 1024px) {
-        top: 11vw;
-      }
-      @media (max-width: 800px) {
-        top: 8vw;
-        z-index: 2;
-      }
-      @media (max-width: 500px) {
-        transform: translateY(var(--things-y)) rotate(var(--things-rotation))
-          scale(1.1);
-      }
+    @media (max-width: 1024px) {
+      top: 11vw;
+    }
+    @media (max-width: 800px) {
+      top: 8vw;
+      z-index: 2;
+    }
+    @media (max-width: 500px) {
+      transform: translateY(var(--things-y)) rotate(var(--things-rotation))
+        scale(1.1);
     }
   }
 }

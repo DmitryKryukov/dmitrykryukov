@@ -113,7 +113,7 @@
     }
     @media (max-width: 500px) {
       grid-column: span 6;
-      height: clamp(500px, calc(50vw - 1rem), calc(100vh - 1rem));
+      height: clamp(400px, calc(50vw - 1rem), calc(100vh - 1rem));
       .project-description {
         display: initial;
       }
@@ -174,7 +174,9 @@
       margin-left: 8px;
       margin-top: -100%;
       margin-bottom: -18px;
-      background-color: var(--background-card);
+      background: url('/images/opt/projects/showreel.gif')
+        var(--background-card);
+      background-size: cover;
       border-radius: 4px;
       transform: rotate(-5deg);
       @media (max-width: 500px) {
@@ -185,7 +187,7 @@
       }
     }
   }
+  @import '../projects/cartone';
+  @import '../projects/meduza';
+  @import '../projects/kit';
 }
-
-@import '../projects/cartone';
-@import '../projects/meduza';
