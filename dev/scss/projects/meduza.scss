@@ -1,0 +1,50 @@
+.project--meduza {
+  background-color: var(--background-body);
+  background-image: url('/images/opt/projects/meduza/meduza-background.jpg');
+  background-size: cover;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  overflow: hidden;
+  .project-image {
+    &__layer {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+      image-rendering: crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
+
+  &__layer--0 {
+    object-fit: cover;
+    mix-blend-mode: screen;
+    transition: transform 0.6s var(--ease-out-quint) 0.2s,
+      opacity 0.6s var(--ease-out-quint) 0.2s;
+  }
+  &__layer--1 {
+    object-fit: cover;
+    object-position: top;
+    opacity: 0;
+    transition: transform 0.6s var(--ease-out-quint),
+      opacity 0.6s var(--ease-out-quint);
+    transform: scale(0.8);
+  }
+  /*
+  &:hover {
+    .project--meduza__layer--0 {
+      opacity: 0;
+      transform: scale(1.2);
+      transition: transform 0.6s var(--ease-out-quint),
+        opacity 0.6s var(--ease-out-quint);
+    }
+    .project--meduza__layer--1 {
+      opacity: 1;
+      transform: scale(1);
+      transition: transform 0.6s var(--ease-out-quint) 0.1s,
+        opacity 0.6s var(--ease-out-quint) 0.1s;
+    }
+  }
+  */
+}

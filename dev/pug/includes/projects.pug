@@ -1,47 +1,60 @@
-//include ../deprecated/projects.pug
+mixin project--wide(title, description)
+  .project.project--wide(class!=attributes.class)
+    .project-image
+      if block
+        block
+    .row-half
+      h4.project-title= title
+      .project-lead= description
+
+mixin project--medium(title, description)
+  .project.project--medium(class!=attributes.class)
+    .project-image
+      .project-image__outer
+        .project-image__inner
+    h4.project-name= title
+    .project-description= description
+
+mixin project--small(title, description)
+  .project.project--small(class!=attributes.class)
+    .project-image
+      if block
+        block
+      else
+        .project-image__outer
+          .project-image__inner
+    h4.project-name= title
+    .project-description= description
+
 .projects
   h3.caption Проекты
-  .wrapper
-    .project-wide-wrapper
-      .project.project--wide.project--cartone
-        img#js-cartone__things.project--cartone__layer.project--cartone__layer--0(src="images/opt/projects/cartone/cartone-layer-0.png" alt="")
-        img.project--cartone__layer.project--cartone__layer--1(src="images/opt/projects/cartone/cartone-layer-1.png" alt="")   
-        .project--cartone__layer.project--cartone__layer--2
+  .projects-column
+
+    .project-row
+      +project--wide('Айдентика, сайт и всякие штуки для рекламного агенства «Картон»', 'Описание проекта').project--cartone
+        picture#js-cartone__things.project-image__layer.project--cartone__layer--0
+          source(srcset="images/opt/projects/cartone/cartone-layer-0--mobile.png" alt="" media="(max-width: 800px)")
+          source(srcset="images/opt/projects/cartone/cartone-layer-0.png" alt="")
+          img(src="images/opt/projects/cartone/cartone-layer-0.png" alt="")
+        picture.project-image__layer.project--cartone__layer--1
+          source(srcset="images/opt/projects/cartone/cartone-layer-1--mobile.png" alt="" media="(max-width: 800px)")
+          source(srcset="images/opt/projects/cartone/cartone-layer-1.png" alt="")
+          img(srcset="images/opt/projects/cartone/cartone-layer-1.png" alt="")
+        .project-image__layer.project--cartone__layer--2
           img#js-cartone__instagram-post.project--cartone__layer--2__instagram-post(src="images/opt/projects/cartone/cartone-instagram-post.png" alt="")
-      .project--wide__text
-        h4.project-title Айдентика, сайт и всякие штуки для рекламного агенства «Картон»
-        .project-lead Описание проекта
 
-    //.project-row
-      .project.project--medium
-        .project-image-wrapper
-          .project-base-image
-            .project-base-image-ratio
-        h4.project-name Название проекта
-        .project-description Описание проекта
-      .project.project--medium
-        .project-image-wrapper
-          .project-base-image
-            .project-base-image-ratio
-        h4.project-name Название проекта
-        .project-description Описание проекта
+    .project-row
+      +project--medium('Название проекта', 'Описание проекта')
+      +project--medium('Название проекта', 'Описание проекта')
 
-    //.project-row
-      .project.project--small
-        .project-image-wrapper
-          .project-base-image
-            .project-base-image-ratio
-        h4.project-name Название проекта
-        .project-description Описание проекта
-      .project.project--small
-        .project-image-wrapper
-          .project-base-image
-            .project-base-image-ratio
-        h4.project-name Название проекта
-        .project-description Описание проекта
-      .project-row__text
+    .project-row.project-row--wrap
+      +project--small('Медуза фридом', 'Маленький шрифт, для борьбы с большой цензурой').project--meduza
+        img.project-image__layer.project--meduza__layer--0(src="images/opt/projects/meduza/meduza-layer-0.jpg" alt="")
+        //img.project-image__layer.project--meduza__layer--1(src="images/opt/projects/meduza/meduza-layer-1.png" alt="")
+      +project--small('Название проекта', 'Описание проекта')
+      .project-cell
         h4.project-title Специализировался на автотематике
         .project-description 
-          p Так сложилось, что последние N лет я разрабатываю сайты, продукты и рекламные материалы для автодилеров.
-          p.feature Сделал тут уже миллион всего.
-          p Царствие небесное этой прекрасной бизнес-сфере на просторах России.
+          p Так сложилось, что последние N лет я разрабатываю сайты, продукты и рекламные материалы для автодилеров.
+          p.project-description--autosphere Сделал тут уже миллион всего.
+          p Царствие небесное этой прекрасной <nobr>бизнес-сфере</nobr> на просторах России.

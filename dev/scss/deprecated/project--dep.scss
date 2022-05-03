@@ -1,5 +1,5 @@
 @media screen {
-    .project {
+    .project--dep {
         grid-area: projects;
         position: relative;
         height: 680px;
@@ -7,33 +7,31 @@
         overflow: hidden;
 
         @media (max-width: 500px) {
-            & {
                 height: 320px;
                 pointer-events: none;
-            }
         }
 
         @media (pointer: fine) {
             &:hover {
-                .project-layer--idle {
+                .project-layer--dep--idle {
                     opacity: 0;
                     transition: opacity 0.6s var(--ease-out-quint);
                     pointer-events: none;
                 }
 
-                .project-layer--idle__typo {
+                .project-layer--dep--idle__typo {
                     transform: scale(1.2);
                     transition: transform 1.6s var(--ease-out-quint);
                 }
 
-                .project-layer--hover__sun-wrapper {
+                .project-layer--dep--hover__sun-wrapper {
                     transform: scale(1);
                 }
             }
         }
     }
 
-    .project-layer {
+    .project-layer--dep {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -45,23 +43,23 @@
         background-color: var(--background-card);
     }
 
-    .project-layer--idle {
+    .project-layer--dep--idle {
         transition: opacity 0.6s var(--ease-out-quint);
         z-index: 10;
     }
 
-    .project-layer--idle__typo {
+    .project-layer--dep--idle__typo {
         transition: transform 0.6s var(--ease-out-quint);
         width: clamp(10px, 80vw, 1080px);
     }
 
-    .project-layer--hover__sun-wrapper {
+    .project-layer--dep--hover__sun-wrapper {
         transform: scale(0.8);
         transition: transform 0.6s var(--ease-out-quint);
         pointer-events: none;
     }
 
-    .project-layer--hover__sun {
+    .project-layer--dep--hover__sun {
         --sun-size: min(80vw, 438px) width: var(--sun-size);
         height: min(80vw, 438px);
         animation: sun-rotate 3s linear infinite;
@@ -77,13 +75,13 @@
         }
     }
 
-    .project-layer--hover-hand {
+    .project-layer--dep--hover-hand {
         --blur: 20px;
         z-index: 5;
         pointer-events: none;
     }
 
-    .project-layer--hover-hand-left {
+    .project-layer--dep--hover-hand-left {
         --x-position: 20%;
         --y-position: calc(50% - 128px);
         --rotation: 0;
@@ -119,7 +117,7 @@
         }
     }
 
-    .project-layer--hover-hand-right {
+    .project-layer--dep--hover-hand-right {
         --x-position: 20%;
         --y-position: calc(50% - 150px);
         --rotation: 0;

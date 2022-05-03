@@ -1,10 +1,12 @@
-.main-footer {
-  grid-area: footer;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 2.7em 0 3.25em;
-  color: var(--foreground-muted);
-}
-.main-footer__github {
-  justify-self: end;
+@media screen {
+  .main-footer {
+    grid-area: footer;
+    display: flex;
+    gap: var(--nav-gap);
+    padding: 2.7em 0 3.25em;
+    color: var(--foreground-muted);
+    @media (max-width: 500px) {
+      justify-content: space-between;
+    }
+  }
 }

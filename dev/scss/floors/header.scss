@@ -1,20 +1,21 @@
 @media screen {
-  .main-header {
+  :root {
     --nav-gap: 1.875rem;
+    @media (max-width: 800px) {
+      --nav-gap: 1rem;
+    }
+    @media (max-width: 500px) {
+      --nav-gap: 0.5rem;
+    }
+  }
+  .main-header {
     grid-area: header;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0.75em 0 1.5em;
 
-    @media (max-width: 800px) {
-      --nav-gap: 1rem;
-    }
-
     @media (max-width: 500px) {
-      & {
-        --nav-gap: 0.5rem;
-        padding: 1em 0 0;
-      }
+      padding: 1em 0 0;
     }
   }
 
@@ -25,15 +26,11 @@
     white-space: nowrap;
     gap: 0.5rem;
     @media (max-width: 800px) {
-      & {
-        margin-right: var(--nav-gap);
-      }
+      margin-right: var(--nav-gap);
     }
 
     @media (max-width: 500px) {
-      & {
-        font-size: 1.25rem;
-      }
+      font-size: 1.25rem;
     }
   }
   .main-header__photo-wrapper {
@@ -57,16 +54,12 @@
     margin-top: 0.25em;
 
     @media (max-width: 800px) {
-      & {
-        justify-self: end;
-      }
+      justify-self: end;
     }
 
     @media (max-width: 500px) {
-      & {
-        flex-direction: column;
-        margin-top: 0;
-      }
+      flex-direction: column;
+      margin-top: 0;
     }
   }
 

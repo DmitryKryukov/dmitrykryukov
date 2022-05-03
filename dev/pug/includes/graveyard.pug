@@ -1,21 +1,29 @@
 mixin grave(name)
   .grave-wrapper
     .grave
+      if block 
+        .grave__image
+          block
       .grave__text= name
 
 .graveyard
   h3.caption Отпусти и забудь
-  .graveyard-row
-    +grave('Классифайд объявлений автомобилей «Гараж»')
-    +grave('Интернет-магазин «Блэк Рино Тюнинг»')
-    +grave('Айдентика веб-студии «Стекло»')
-    +grave('ЦРМ-система «Картон»')
-    .graveyard-row__item--empty 
-    .grave-wrapper
-      .grave
-        .grave__image
-          .grave__image__yeah
-            span.grave__image__yeah--front Ура
-            span.grave__image__yeah--back Ура
-        .grave__text Продолжаем веселиться, будут и другие!
-        canvas#js-grave-particles.grave-particles(width="612", height= "808")
+  .graveyard-scroller
+    .graveyard-row
+      +grave('Классифайд объявлений автомобилей «Гараж»')
+      +grave('Интернет-магазин «Блэк Рино Тюнинг»')
+      +grave('Айдентика веб-студии «Стекло»')
+      +grave('ЦРМ-система «Картон»')
+        .grave__image__star
+          .grave__image__star-wrapper
+            img.grave__image__star__image(src="../images/opt/graveyard/grave-cartone-crm.png")
+            .grave__image__star__glass
+      .graveyard-row__item--empty 
+      .grave-wrapper
+        .grave
+          .grave__image
+            .grave__image__yeah
+              span.grave__image__yeah--front Ура
+              span.grave__image__yeah--back Ура
+          .grave__text Продолжаем веселиться, будут и другие!
+          canvas#js-grave-particles.grave-particles(width="612", height= "808")

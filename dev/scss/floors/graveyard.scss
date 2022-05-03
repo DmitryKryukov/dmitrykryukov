@@ -2,16 +2,70 @@
   .graveyard {
     grid-area: 'graveyard';
     margin-top: 4.55em;
+    margin-bottom: 3.5em;
+    width: 100%;
+    @media (max-width: 1024px) {
+      margin-bottom: calc(3.5em - 1rem);
+      //Пофиксить отступ до подвала на меньших разрешениях
+    }
+  }
+  .graveyard-scroller {
+    width: 100%;
+    overflow-x: auto;
+    @media (pointer: coarse) {
+      @media (max-width: 1024px) {
+        user-select: none;
+        margin-left: -8px;
+        margin-right: -8px;
+        width: 100vw;
+        padding: 0 0 1rem;
+      }
+      @media (max-width: 800px) {
+        margin-left: -16px;
+        margin-right: -16px;
+        width: 100vw;
+        padding: 0 0 1rem;
+      }
+    }
   }
   .graveyard-row {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 8px;
+    @media (max-width: 1500px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (pointer: coarse) {
+      @media (max-width: 1024px) {
+        min-width: 1200px;
+        padding: 0 8px;
+      }
+      @media (max-width: 800px) {
+        padding: 0 16px;
+      }
+    }
+    @media (pointer: fine) {
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 320px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
   }
   .grave-wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 142.93%;
+    overflow: hidden;
+    @media (pointer: fine) {
+      @media (max-width: 1024px) {
+        margin-bottom: 1rem;
+      }
+    }
   }
   .grave {
     display: flex;
@@ -21,8 +75,22 @@
     width: 100%;
     height: 100%;
     padding: 0 36px 56px;
-    background: linear-gradient(#212121, var(--background-card));
+    background: linear-gradient(#161616, var(--background-card));
     mask-size: 100% 100%;
+    @media (max-width: 1800px) {
+      padding: 0 28px 44px;
+    }
+    @media (max-width: 1500px) {
+      padding: 0 2vw 3vw;
+    }
+    @media (max-width: 1024px) {
+      padding: 0 24px 32px;
+    }
+  }
+  .graveyard-row__item--empty {
+    @media (max-width: 1500px) {
+      display: none;
+    }
   }
   .grave-wrapper:nth-child(1) .grave {
     mask-image: url('../images/opt/graveyard/grave--1.svg');
@@ -56,12 +124,18 @@
 
   .grave__image__yeah {
     position: relative;
-    font-size: 100px;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    @media (max-width: 1500px) {
+      font-size: clamp(70px, 6.5vw, 100px);
+    }
+    @media (max-width: 400px) and (pointer: fine) {
+      font-size: 15vw;
+    }
   }
   .grave__image__yeah--front,
   .grave__image__yeah--back {
@@ -100,15 +174,84 @@
       }
     }
   }
-
   .grave-particles {
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
     mask-image: linear-gradient(#000, transparent);
-    filter: blur(1px);
+  }
+
+  .grave__image__star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 500px) and (pointer: fine) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &-wrapper {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 1200px) {
+        width: calc(100% + 100px);
+        margin-left: -50px;
+        margin-right: -50px;
+      }
+      @media (max-width: 1024px) and (pointer: fine) {
+        width: 100%;
+      }
+      @media (max-width: 500px) and (pointer: fine) {
+        width: calc(100% + 100px);
+        margin-top: -30%;
+        margin-left: -50px;
+        margin-right: -50px;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/opt/noise.png');
+      mix-blend-mode: overlay;
+      opacity: 0.32;
+      pointer-events: none;
+    }
+    &__image {
+      width: 120px;
+      height: 120px;
+      margin-left: -2%;
+      transform: rotate(-15deg);
+      filter: drop-shadow(0 0 15px #f9be5080)
+        drop-shadow(20px -10px 55px #f9be50);
+      @media (max-width: 500px) and (pointer: fine) {
+        width: 24vw;
+        height: 24vw;
+      }
+    }
+    &__glass {
+      width: 100px;
+      padding-bottom: 100px;
+      margin-left: -60px;
+      border: 1px solid #f9e45040;
+      background-image: linear-gradient(#ffffff21, #00000000);
+      backdrop-filter: blur(6px);
+      border-radius: 50%;
+      @media (max-width: 500px) and (pointer: fine) {
+        width: 20vw;
+        padding-bottom: 20vw;
+      }
+    }
   }
 }

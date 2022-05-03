@@ -2,6 +2,7 @@
   body {
     background-color: var(--background-body);
     color: var(--foreground-body);
+    overflow-x: hidden;
   }
 
   a,
@@ -27,6 +28,16 @@
       & {
         font-size: 0.8em;
       }
+    }
+  }
+
+  .row-half {
+    width: 50%;
+    @media (max-width: 1850px) {
+      width: max(900px, 50vw);
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
     }
   }
 }
