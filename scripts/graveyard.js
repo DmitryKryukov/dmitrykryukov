@@ -33,7 +33,11 @@ export function graveyardInit() {
       )
       ctx.fillStyle = this.color
       ctx.fill()
-      if (this.y > canvas.offsetHeight * 2 + 20) {
+      if (
+        this.y > canvas.offsetHeight * 3 + 100 ||
+        this.x < -80 ||
+        this.x > canvas.offsetWidth * 2 + 80
+      ) {
         this.x = this.initialX
         this.y = this.initialY
       }
@@ -89,7 +93,7 @@ export function graveyardInit() {
     }
   }
 
-  let particleSystem = new ParticleSystem(200, 2, 8, 0.1, 0.5, ctx)
+  let particleSystem = new ParticleSystem(300, 2, 8, 0.1, 0.5, ctx)
   function Render() {
     window.requestAnimationFrame(Render)
     particleSystem.render(ctx)
