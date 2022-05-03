@@ -90,87 +90,116 @@
           </div>
         </div>
       </div>
-      <!--include ../deprecated/projects.pug-->
       <div class="projects">
         <h3 class="caption">Проекты</h3>
-        <div class="wrapper">
-          <div class="project-wide-wrapper">
-            <div class="project project--wide project--cartone"><img class="project--cartone__layer project--cartone__layer--0" id="js-cartone__things" src="images/opt/projects/cartone/cartone-layer-0.png" alt=""><img class="project--cartone__layer project--cartone__layer--1" src="images/opt/projects/cartone/cartone-layer-1.png" alt="">
-              <div class="project--cartone__layer project--cartone__layer--2"><img class="project--cartone__layer--2__instagram-post" id="js-cartone__instagram-post" src="images/opt/projects/cartone/cartone-instagram-post.png" alt=""></div>
-            </div>
-            <div class="project--wide__text">
-              <h4 class="project-title">Айдентика, сайт и всякие штуки для рекламного агенства «Картон»</h4>
-              <div class="project-lead">Описание проекта</div>
+        <div class="projects-column">
+          <div class="project-row">
+                  <div class="project project--wide project--cartone">
+                    <div class="project-image">
+                      <picture class="project-image__layer project--cartone__layer--0" id="js-cartone__things">
+                        <source srcset="images/opt/projects/cartone/cartone-layer-0--mobile.png" alt="" media="(max-width: 800px)">
+                        <source srcset="images/opt/projects/cartone/cartone-layer-0.png" alt=""><img src="images/opt/projects/cartone/cartone-layer-0.png" alt="">
+                      </picture>
+                      <picture class="project-image__layer project--cartone__layer--1">
+                        <source srcset="images/opt/projects/cartone/cartone-layer-1--mobile.png" alt="" media="(max-width: 800px)">
+                        <source srcset="images/opt/projects/cartone/cartone-layer-1.png" alt=""><img srcset="images/opt/projects/cartone/cartone-layer-1.png" alt="">
+                      </picture>
+                      <div class="project-image__layer project--cartone__layer--2"><img class="project--cartone__layer--2__instagram-post" id="js-cartone__instagram-post" src="images/opt/projects/cartone/cartone-instagram-post.png" alt=""></div>
+                    </div>
+                    <div class="row-half">
+                      <h4 class="project-title">Айдентика, сайт и всякие штуки для рекламного агенства «Картон»</h4>
+                      <div class="project-lead">Описание проекта</div>
+                    </div>
+                  </div>
+          </div>
+          <div class="project-row">
+                  <div class="project project--medium">
+                    <div class="project-image">
+                      <div class="project-image__outer">
+                        <div class="project-image__inner"></div>
+                      </div>
+                    </div>
+                    <h4 class="project-name">Название проекта</h4>
+                    <div class="project-description">Описание проекта</div>
+                  </div>
+                  <div class="project project--medium">
+                    <div class="project-image">
+                      <div class="project-image__outer">
+                        <div class="project-image__inner"></div>
+                      </div>
+                    </div>
+                    <h4 class="project-name">Название проекта</h4>
+                    <div class="project-description">Описание проекта</div>
+                  </div>
+          </div>
+          <div class="project-row project-row--wrap">
+                  <div class="project project--small project--meduza">
+                    <div class="project-image"><img class="project-image__layer project--meduza__layer--0" src="images/opt/projects/meduza/meduza-layer-0.jpg" alt="">
+                      <!--img.project-image__layer.project--meduza__layer--1(src="images/opt/projects/meduza/meduza-layer-1.png" alt="")-->
+                    </div>
+                    <h4 class="project-name">Медуза фридом</h4>
+                    <div class="project-description">Маленький шрифт, для борьбы с большой цензурой</div>
+                  </div>
+                  <div class="project project--small">
+                    <div class="project-image">
+                      <div class="project-image__outer">
+                        <div class="project-image__inner"></div>
+                      </div>
+                    </div>
+                    <h4 class="project-name">Название проекта</h4>
+                    <div class="project-description">Описание проекта</div>
+                  </div>
+            <div class="project-cell">
+              <h4 class="project-title">Специализировался на автотематике</h4>
+              <div class="project-description"> 
+                <p>Так сложилось, что последние N лет я разрабатываю сайты, продукты и рекламные материалы для автодилеров.</p>
+                <p class="project-description--autosphere">Сделал тут уже миллион всего.</p>
+                <p>Царствие небесное этой прекрасной <nobr>бизнес-сфере</nobr> на просторах России.</p>
+              </div>
             </div>
           </div>
-          <!--.project-row
-          .project.project--medium
-            .project-image-wrapper
-              .project-base-image
-                .project-base-image-ratio
-            h4.project-name Название проекта
-            .project-description Описание проекта
-          .project.project--medium
-            .project-image-wrapper
-              .project-base-image
-                .project-base-image-ratio
-            h4.project-name Название проекта
-            .project-description Описание проекта
-          
-          -->
-          <!--.project-row
-          .project.project--small
-            .project-image-wrapper
-              .project-base-image
-                .project-base-image-ratio
-            h4.project-name Название проекта
-            .project-description Описание проекта
-          .project.project--small
-            .project-image-wrapper
-              .project-base-image
-                .project-base-image-ratio
-            h4.project-name Название проекта
-            .project-description Описание проекта
-          .project-row__text
-            h4.project-title Специализировался на автотематике
-            .project-description 
-              p Так сложилось, что последние N лет я разрабатываю сайты, продукты и рекламные материалы для автодилеров.
-              p.feature Сделал тут уже миллион всего.
-              p Царствие небесное этой прекрасной бизнес-сфере на просторах России.
-          -->
         </div>
       </div>
       <div class="graveyard">
         <h3 class="caption">Отпусти и забудь</h3>
-        <div class="graveyard-row">
-                <div class="grave-wrapper">
-                  <div class="grave">
-                    <div class="grave__text">Классифайд объявлений автомобилей «Гараж»</div>
+        <div class="graveyard-scroller">
+          <div class="graveyard-row">
+                  <div class="grave-wrapper">
+                    <div class="grave">
+                      <div class="grave__text">Классифайд объявлений автомобилей «Гараж»</div>
+                    </div>
                   </div>
-                </div>
-                <div class="grave-wrapper">
-                  <div class="grave">
-                    <div class="grave__text">Интернет-магазин «Блэк Рино Тюнинг»</div>
+                  <div class="grave-wrapper">
+                    <div class="grave">
+                      <div class="grave__text">Интернет-магазин «Блэк Рино Тюнинг»</div>
+                    </div>
                   </div>
-                </div>
-                <div class="grave-wrapper">
-                  <div class="grave">
-                    <div class="grave__text">Айдентика веб-студии «Стекло»</div>
+                  <div class="grave-wrapper">
+                    <div class="grave">
+                      <div class="grave__text">Айдентика веб-студии «Стекло»</div>
+                    </div>
                   </div>
-                </div>
-                <div class="grave-wrapper">
-                  <div class="grave">
-                    <div class="grave__text">ЦРМ-система «Картон»</div>
+                  <div class="grave-wrapper">
+                    <div class="grave">
+                      <div class="grave__image">
+                        <div class="grave__image__star">
+                          <div class="grave__image__star-wrapper"><img class="grave__image__star__image" src="../images/opt/graveyard/grave-cartone-crm.png">
+                            <div class="grave__image__star__glass"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grave__text">ЦРМ-система «Картон»</div>
+                    </div>
                   </div>
+            <div class="graveyard-row__item--empty"> </div>
+            <div class="grave-wrapper">
+              <div class="grave">
+                <div class="grave__image">
+                  <div class="grave__image__yeah"><span class="grave__image__yeah--front">Ура</span><span class="grave__image__yeah--back">Ура</span></div>
                 </div>
-          <div class="graveyard-row__item--empty"> </div>
-          <div class="grave-wrapper">
-            <div class="grave">
-              <div class="grave__image">
-                <div class="grave__image__yeah"><span class="grave__image__yeah--front">Ура</span><span class="grave__image__yeah--back">Ура</span></div>
+                <div class="grave__text">Продолжаем веселиться, будут и другие!</div>
+                <canvas class="grave-particles" id="js-grave-particles" width="612" height="808"></canvas>
               </div>
-              <div class="grave__text">Продолжаем веселиться, будут и другие!</div>
-              <canvas class="grave-particles" id="js-grave-particles" width="612" height="808"></canvas>
             </div>
           </div>
         </div>
