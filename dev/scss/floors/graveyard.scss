@@ -129,7 +129,8 @@
 
   .grave-wrapper:last-child .grave {
     mask-image: url('../images/opt/graveyard/grave--last.svg');
-    background: url('../images/opt/graveyard/grave--last-outline.svg') no-repeat center / 100% 100%,
+    background: url('../images/opt/graveyard/grave--last-outline.svg') no-repeat
+        center / 100% 100%,
       radial-gradient(440px 440px at 50% 25%, #ffefcc13 0%, #ffe5f200 100%);
   }
 
@@ -271,7 +272,8 @@
       height: 120px;
       margin-left: -2%;
       transform: rotate(-15deg);
-      filter: drop-shadow(0 0 15px #f9be5080) drop-shadow(20px -10px 55px #f9be50);
+      filter: drop-shadow(0 0 15px #f9be5080)
+        drop-shadow(20px -10px 55px #f9be50);
 
       @media (max-width: 500px) and (pointer: fine) {
         width: 24vw;
@@ -299,7 +301,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: Min(.4vw, 8px);
+    margin-top: Min(0.4vw, 8px);
     width: 100%;
     height: 100%;
 
@@ -328,7 +330,7 @@
       height: 100%;
       object-fit: cover;
       transform: scale(1.2);
-      @media (max-width: 1024px) and (pointer: fine){
+      @media (max-width: 1024px) and (pointer: fine) {
         transform: initial;
       }
     }
@@ -341,7 +343,21 @@
     width: 100%;
     height: 100%;
 
-    
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  .grave__image__garage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
     &__image {
       width: 100%;
       height: 100%;

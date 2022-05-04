@@ -7,10 +7,12 @@ mixin grave(name)
       .grave__text= name
 
 .graveyard
-  h3.caption Отпусти и забудь
+  h3.caption Кладбище проектов
   .graveyard-scroller
     .graveyard-row
       +grave('Классифайд объявлений автомобилей «Гараж»')
+        .grave__image__garage
+          img.grave__image__garage__image(src="../images/opt/graveyard/grave-garage.png")
       +grave('Интернет-магазин «Блэк Рино Тюнинг»')
         .grave__image__rhino
           img.grave__image__rhino__image(src="../images/opt/graveyard/grave-rhino.png")
