@@ -4,14 +4,17 @@
     margin-top: 4.55em;
     margin-bottom: 3.5em;
     width: 100%;
+
     @media (max-width: 1024px) {
       margin-bottom: calc(3.5em - 1rem);
       //Пофиксить отступ до подвала на меньших разрешениях
     }
   }
+
   .graveyard-scroller {
     width: 100%;
     overflow-x: auto;
+
     @media (pointer: coarse) {
       @media (max-width: 1024px) {
         user-select: none;
@@ -20,6 +23,7 @@
         width: 100vw;
         padding: 0 0 1rem;
       }
+
       @media (max-width: 800px) {
         margin-left: -16px;
         margin-right: -16px;
@@ -28,45 +32,55 @@
       }
     }
   }
+
   .graveyard-row {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 8px;
+
     @media (max-width: 1500px) {
       grid-template-columns: repeat(5, 1fr);
     }
+
     @media (pointer: coarse) {
       @media (max-width: 1024px) {
         min-width: 1200px;
         padding: 0 8px;
       }
+
       @media (max-width: 800px) {
         padding: 0 16px;
       }
     }
+
     @media (pointer: fine) {
       @media (max-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
       }
+
       @media (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
       }
-      @media (max-width: 320px) {
+
+      @media (max-width: 340px) {
         grid-template-columns: repeat(1, 1fr);
       }
     }
   }
+
   .grave-wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 142.93%;
     overflow: hidden;
+
     @media (pointer: fine) {
       @media (max-width: 1024px) {
         margin-bottom: 1rem;
       }
     }
   }
+
   .grave {
     display: flex;
     flex-direction: column;
@@ -77,37 +91,45 @@
     padding: 0 36px 56px;
     background: linear-gradient(#161616, var(--background-card));
     mask-size: 100% 100%;
+
     @media (max-width: 1800px) {
       padding: 0 28px 44px;
     }
+
     @media (max-width: 1500px) {
       padding: 0 2vw 3vw;
     }
+
     @media (max-width: 1024px) {
       padding: 0 24px 32px;
     }
   }
+
   .graveyard-row__item--empty {
     @media (max-width: 1500px) {
       display: none;
     }
   }
+
   .grave-wrapper:nth-child(1) .grave {
     mask-image: url('../images/opt/graveyard/grave--1.svg');
   }
+
   .grave-wrapper:nth-child(2) .grave {
     mask-image: url('../images/opt/graveyard/grave--2.svg');
   }
+
   .grave-wrapper:nth-child(3) .grave {
     mask-image: url('../images/opt/graveyard/grave--3.svg');
   }
+
   .grave-wrapper:nth-child(4) .grave {
     mask-image: url('../images/opt/graveyard/grave--4.svg');
   }
+
   .grave-wrapper:last-child .grave {
     mask-image: url('../images/opt/graveyard/grave--last.svg');
-    background: url('../images/opt/graveyard/grave--last-outline.svg') no-repeat
-        center / 100% 100%,
+    background: url('../images/opt/graveyard/grave--last-outline.svg') no-repeat center / 100% 100%,
       radial-gradient(440px 440px at 50% 25%, #ffefcc13 0%, #ffe5f200 100%);
   }
 
@@ -130,13 +152,16 @@
     width: 100%;
     height: 100%;
     font-size: 100px;
+
     @media (max-width: 1500px) {
       font-size: clamp(70px, 6.5vw, 100px);
     }
+
     @media (max-width: 400px) and (pointer: fine) {
       font-size: 15vw;
     }
   }
+
   .grave__image__yeah--front,
   .grave__image__yeah--back {
     position: absolute;
@@ -144,12 +169,14 @@
     text-align: center;
     filter: contrast(2.7) brightness(0.9) saturate(3);
   }
+
   .grave__image__yeah--front {
     color: var(--accent-primary);
     z-index: 1;
     mix-blend-mode: difference;
     transform-origin: 90% 25%;
     animation: 0.2s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate wiggle-1;
+
     @keyframes wiggle-1 {
       from {
         transform: rotate(3deg);
@@ -160,20 +187,24 @@
       }
     }
   }
+
   .grave__image__yeah--back {
     color: var(--accent-secondary);
     transform: rotate(-3deg);
     transform-origin: 45% 45%;
     animation: 0.25s cubic-bezier(0.83, 0, 0.17, 1) infinite alternate wiggle-2;
+
     @keyframes wiggle-2 {
       from {
         transform: rotate(-4deg);
       }
+
       to {
         transform: rotate(7deg);
       }
     }
   }
+
   .grave-particles {
     position: absolute;
     object-fit: cover;
@@ -191,24 +222,29 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+
     @media (max-width: 500px) and (pointer: fine) {
       position: absolute;
       top: 0;
       left: 0;
     }
+
     &-wrapper {
       display: flex;
       width: 100%;
       align-items: center;
       justify-content: center;
+
       @media (max-width: 1200px) {
         width: calc(100% + 100px);
         margin-left: -50px;
         margin-right: -50px;
       }
+
       @media (max-width: 1024px) and (pointer: fine) {
         width: 100%;
       }
+
       @media (max-width: 500px) and (pointer: fine) {
         width: calc(100% + 100px);
         margin-top: -30%;
@@ -216,6 +252,7 @@
         margin-right: -50px;
       }
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -228,18 +265,20 @@
       opacity: 0.32;
       pointer-events: none;
     }
+
     &__image {
       width: 120px;
       height: 120px;
       margin-left: -2%;
       transform: rotate(-15deg);
-      filter: drop-shadow(0 0 15px #f9be5080)
-        drop-shadow(20px -10px 55px #f9be50);
+      filter: drop-shadow(0 0 15px #f9be5080) drop-shadow(20px -10px 55px #f9be50);
+
       @media (max-width: 500px) and (pointer: fine) {
         width: 24vw;
         height: 24vw;
       }
     }
+
     &__glass {
       width: 100px;
       padding-bottom: 100px;
@@ -248,10 +287,66 @@
       background-image: linear-gradient(#ffffff21, #00000000);
       backdrop-filter: blur(6px);
       border-radius: 50%;
+
       @media (max-width: 500px) and (pointer: fine) {
         width: 20vw;
         padding-bottom: 20vw;
       }
+    }
+  }
+
+  .grave__image__glass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: Min(.4vw, 8px);
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 500px) and (pointer: fine) {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      margin-top: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/opt/noise.png');
+      mix-blend-mode: overlay;
+      opacity: 0.32;
+      pointer-events: none;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2);
+      @media (max-width: 1024px) and (pointer: fine){
+        transform: initial;
+      }
+    }
+  }
+
+  .grave__image__rhino {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
     }
   }
 }
