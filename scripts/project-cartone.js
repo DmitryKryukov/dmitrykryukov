@@ -33,7 +33,6 @@ export function projectCartoneInit() {
         ratio * (-entry.target.offsetHeight / 4) + 'px'
       )
       things.style.setProperty('--things-rotation', ratio * -3 + 3 + 'deg')
-      console.log(entry.target.offsetHeight)
       instagramPostImage.style.opacity = 1
       instagramPostImage.style.setProperty(
         '--instagram-post-y',
