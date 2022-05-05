@@ -5,15 +5,16 @@ mixin project--wide(title, description)
         block
     .row-half
       h4.project-title= title
-      .project-lead= description
+      if description
+        .project-lead= description
 
-mixin project--medium(title, description, src, alt)
+mixin project--medium(title, description, srcset, src, alt)
   .project.project--medium(class!=attributes.class)
     .project-image
       .project-image__outer
         .project-image__inner
           if src
-            img.project-image__absolute(src=src, alt=alt)
+            img.project-image__absolute(srcset=srcset, src=src alt=alt)
     h4.project-name= title
     .project-description= description
 
@@ -35,31 +36,30 @@ mixin project--small(title, description, src, alt)
   .projects-column
 
     .project-row
-      +project--wide('Айдентика, сайт и всякие штуки для рекламного агенства «Картон»', 'Описание проекта').project--cartone
+      +project--wide('Айдентика, сайт и всякие штуки для рекламного агенства «Картон»').project--cartone
         picture#js-cartone__things.project-image__layer.project--cartone__layer--0
-          source(srcset="images/opt/projects/cartone/cartone-layer-0--mobile.png" alt="" media="(max-width: 800px)")
-          source(srcset="images/opt/projects/cartone/cartone-layer-0.png" alt="")
+          source(srcset="images/opt/projects/cartone/cartone-layer-0--mobile.png, images/opt/projects/cartone/cartone-layer-0--mobile@2x.png 2x" alt="" media="(max-width: 800px)")
+          source(srcset="images/opt/projects/cartone/cartone-layer-0.png, images/opt/projects/cartone/cartone-layer-0@2x.png 2x" alt="")
           img(src="images/opt/projects/cartone/cartone-layer-0.png" alt="")
         picture.project-image__layer.project--cartone__layer--1
-          source(srcset="images/opt/projects/cartone/cartone-layer-1--mobile.png" alt="" media="(max-width: 800px)")
-          source(srcset="images/opt/projects/cartone/cartone-layer-1.png" alt="")
+          source(srcset="images/opt/projects/cartone/cartone-layer-1--mobile.png, images/opt/projects/cartone/cartone-layer-1--mobile@2x.png 2x" alt="" media="(max-width: 800px)")
+          source(srcset="images/opt/projects/cartone/cartone-layer-1.png, images/opt/projects/cartone/cartone-layer-1@2x.png 2x" alt="")
           img(srcset="images/opt/projects/cartone/cartone-layer-1.png" alt="")
         .project-image__layer.project--cartone__layer--2
-          img#js-cartone__instagram-post.project--cartone__layer--2__instagram-post(src="images/opt/projects/cartone/cartone-instagram-post.png" alt="")
+          img#js-cartone__instagram-post.project--cartone__layer--2__instagram-post(srcset="images/opt/projects/cartone/cartone-instagram-post.png, images/opt/projects/cartone/cartone-instagram-post@2x.png 2x " src="images/opt/projects/cartone/cartone-instagram-post.png" alt="")
 
     .project-row
-      +project--medium('Стрит авто', 'Лучший шаблон для быстрого запуска рекламы', 'images/opt/projects/strit/strit-layer-0.png').project--strit
-      +project--medium('Лада нью', 'Переосмысливаем структуру автосайта', 'images/opt/projects/lada-neue/lada-neue-layer-0.png')
+      +project--medium('Стрит авто', 'Лучший шаблон для быстрого запуска рекламы', 'images/opt/projects/strit/strit-layer-0.png, images/opt/projects/strit/strit-layer-0@2x.png 2x', 'images/opt/projects/strit/strit-layer-0.png').project--strit
+      +project--medium('Лада нью', 'Переосмысливаем структуру автосайта', 'images/opt/projects/lada-neue/lada-neue-layer-0.png, images/opt/projects/lada-neue/lada-neue-layer-0@2x.png 2x', 'images/opt/projects/lada-neue/lada-neue-layer-0.png')
 
     .project-row.project-row--wrap
       +project--small('Медуза фридом', 'Маленький шрифт для борьбы с большой цензурой').project--meduza
-        img.project-image__layer.project--meduza__layer--0(src="images/opt/projects/meduza/meduza-layer-0.jpg" alt="")
-        //img.project-image__layer.project--meduza__layer--1(src="images/opt/projects/meduza/meduza-layer-1.png" alt="")
-      +project--small('Кит авто', 'Описание проекта').project--kit
-        img.project-image__layer.project--kit__layer--0(src="images/opt/projects/kit/kit-layer-0.png" alt="")
+        img.project-image__layer.project--meduza__layer--0(srcset="images/opt/projects/meduza/meduza-layer-0.png, images/opt/projects/meduza/meduza-layer-0@2x.png 2x" src="images/opt/projects/meduza/meduza-layer-0.png" alt="")
+      +project--small('Кит авто', 'Повышаем конверсию сайта дилера').project--kit
+        img.project-image__layer.project--kit__layer--0(srcset="images/opt/projects/kit/kit-layer-0.png, images/opt/projects/kit/kit-layer-0@2x.png 2x" src="images/opt/projects/kit/kit-layer-0.png" alt="")
       .project-cell
         h4.project-title Специализировался на автотематике
         .project-description 
           p Так сложилось, что последние N лет я разрабатываю сайты, продукты и рекламные материалы для автодилеров.
-          p.project-description--autosphere Сделал тут уже миллион всего.
+          p.project-description--autosphere Сделал тут уже всё:
           p Царствие небесное этой прекрасной <nobr>бизнес-сфере</nobr> на просторах России.
