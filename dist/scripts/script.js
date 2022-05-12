@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
       )
       skillItem.style.transform = `rotate(${randomRotation}deg)`
     })
-  if (window.location.href.indexOf('test') > -1) {
     projectCartoneInit()
     graveyardInit()
-  } else {
-    handAnimationInit()
-  }
 })

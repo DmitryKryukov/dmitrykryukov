@@ -1837,6 +1837,7 @@ input {
   .info-group__text {
     line-height: 18pt
   }
+  .graveyard,
   .main-footer,
   .projects {
     display: none
